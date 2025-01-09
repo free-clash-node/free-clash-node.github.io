@@ -1,0 +1,110 @@
+/* Color Style Switcher */
+#color-style-switcher div h3 {
+    color: #2d2d2d;
+    font-size: 16px;
+    margin: 8px 3px 12px;
+    font-weight: 700;
+}
+#color-style-switcher {
+    background: #fff;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.14);
+    left: -145px;
+    position: fixed;
+    top: 170px;
+    width: 150px;
+    z-index: 9999;
+}
+#color-style-switcher div {
+    padding: 5px 10px;
+}
+#color-style-switcher .bottom {
+    padding: 0;
+}
+#color-style-switcher .bottom a.settings {
+    background-color: #fff;
+    box-shadow: 7px 2px 14px 0 rgba(0, 0, 0, 0.14);
+    display: block;
+    height: 45px;
+    position: absolute;
+    right: -45px;
+    top: 0;
+    width: 45px;
+    text-align: center;
+}
+#color-style-switcher .bottom a i{
+    font-size: 24px;
+    line-height: 45px;
+}
+#color-style-switcher select {
+    background: none repeat scroll 0 0 #F6F6F6;
+    border: 1px solid #FFFFFF;
+    line-height: 1;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    width: 150px;
+}
+ul.colors {
+    list-style: none outside none;
+    margin: 0 0 10px;
+    overflow: hidden;
+	padding:0;
+}
+ul.colors li {
+    float: left;
+    margin: 2px;
+}
+ul.colors li a {
+    cursor: pointer;
+    display: block;
+    height: 35px;
+    width: 35px;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+}
+
+ul.colors li a.active {
+    position: relative;
+}
+ul.colors li a.active:after {
+    color: #fff;
+    content:"\f00c";
+    font-family: "FontAwesome";
+    font-size: 10px;
+    right: 12px;
+    position: absolute;
+    top: 9px;
+}
+ul.colors li a.color1.active:after, ul.colors li a.color8.active:after{
+    color:#FFFFFF;
+}
+@media only screen and (max-width: 500px) {
+    #color-style-switcher {
+        display: none;
+    }
+}
+
+/* Color Style Switcher  End */
+
+
+
+/* Colors */
+
+/* light-version */
+ul.colors .color1 {
+    background: #F97794;  /* preset */    
+}
+ul.colors .color2 {
+    background: #1AB7D8;  /* blue */
+}
+ul.colors .color3 {
+     background: #1abc9c; /* turquoise */
+}
+ul.colors .color4 {
+     background: #f39c12;  /* orange */
+}
+ul.colors .color5 {
+     background: #8e44ad;  /* Wisteria */
+}
+ul.colors .color6 {
+     background: #e74c3c;  /* Alizarin */
+}
