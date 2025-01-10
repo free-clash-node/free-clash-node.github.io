@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-38465.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>使用@Order注解调整配置类加载顺序</title>
+        <meta name="description" content="1、Spring 4.2 利用@Order控制配置类的加载顺序， 2、Spring在加载Bean的时候，有用到order注解。 3、通过@Order指定执行顺序，值越小，越先执行 4、@Order注解" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>使用@Order注解调整配置类加载顺序</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <p>1、Spring 4.2 利用@Order控制配置类的加载顺序，</p> <p>2、Spring在加载Bean的时候，有用到order注解。</p> <p>3、通过@Order指定执行顺序，值越小，越先执行</p> <p>4、@Order注解常用于定义的AOP先于事物执行</p> <p>1.@Order的注解源码解读<br /> 注解类：</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Retention</span><span class="token punctuation">(</span><span class="token class-name">RetentionPolicy</span><span class="token punctuation">.</span>RUNTIME<span class="token punctuation">)</span><span class="token annotation punctuation">@Target</span><span class="token punctuation">(</span><span class="token punctuation">{<!-- --></span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>TYPE<span class="token punctuation">,</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>METHOD<span class="token punctuation">,</span><span class="token class-name">ElementType</span><span class="token punctuation">.</span>FIELD<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token annotation punctuation">@Documented</span><span class="token keyword">public</span><span class="token annotation punctuation">@interface</span><span class="token class-name">Order</span><span class="token punctuation">{<!-- --></span><span class="token comment">/**      * 默认是最低优先级      */</span><span class="token keyword">int</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token keyword">default</span><span class="token class-name">Ordered</span><span class="token punctuation">.</span>LOWEST_PRECEDENCE<span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>常量类:</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">interface</span><span class="token class-name">Ordered</span><span class="token punctuation">{<!-- --></span><span class="token comment">/**      * 最高优先级的常量值      * @see java.lang.Integer#MIN_VALUE      */</span><span class="token keyword">int</span> HIGHEST_PRECEDENCE<span class="token operator">=</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MIN_VALUE<span class="token punctuation">;</span><span class="token comment">/**      * 最低优先级的常量值      * @see java.lang.Integer#MAX_VALUE      */</span><span class="token keyword">int</span> LOWEST_PRECEDENCE<span class="token operator">=</span><span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">;</span><span class="token keyword">int</span><span class="token function">getOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>注解可以作用在类、方法、字段声明（包括枚举常量）；<br /> 注解有一个int类型的参数，可以不传，默认是最低优先级；<br /> 通过常量类的值我们可以推测参数值越小优先级越高；</p> <p>2.创建三个POJO类Cat、Cat2、Cat3，使用@Component注解将其交给Spring容器自动加载,每个类分别加上@Order(1)、@Order(2)、@Order(3)注解，下面只列出Cat的代码其它的类似</p> <pre><code class="prism language-java"><span class="token keyword">package</span><span class="token namespace">com<span class="token punctuation">.</span>eureka<span class="token punctuation">.</span>client<span class="token punctuation">.</span>co</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Order</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>stereotype<span class="token punctuation">.</span></span><span class="token class-name">Component</span><span class="token punctuation">;</span><span class="token annotation punctuation">@Component</span><span class="token annotation punctuation">@Order</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">Cat</span><span class="token punctuation">{<!-- --></span><span class="token keyword">private</span><span class="token class-name">String</span> catName<span class="token punctuation">;</span><span class="token keyword">private</span><span class="token keyword">int</span> age<span class="token punctuation">;</span><span class="token keyword">public</span><span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Order:1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">public</span><span class="token class-name">String</span><span class="token function">getCatName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span> catName<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">setCatName</span><span class="token punctuation">(</span><span class="token class-name">String</span> catName<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>catName<span class="token operator">=</span> catName<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">public</span><span class="token keyword">int</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span> age<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token keyword">int</span> age<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">=</span> age<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>3.启动应用程序主类</p> <pre><code class="prism language-java"><span class="token keyword">package</span><span class="token namespace">com<span class="token punctuation">.</span>eureka<span class="token punctuation">.</span>client</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Map</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span></span><span class="token class-name">SpringApplication</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span></span><span class="token class-name">SpringBootApplication</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token namespace">com<span class="token punctuation">.</span>eureka<span class="token punctuation">.</span>client<span class="token punctuation">.</span>co<span class="token punctuation">.</span></span><span class="token class-name">Person</span><span class="token punctuation">;</span><span class="token annotation punctuation">@SpringBootApplication</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">EurekaClientApplication</span><span class="token punctuation">{<!-- --></span><span class="token keyword">public</span><span class="token keyword">static</span><span class="token keyword">void</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">EurekaClientApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>输出结果是：</p> <pre><code class="prism language-java"><span class="token class-name">Order</span><span class="token operator">:</span><span class="token number">1</span><span class="token class-name">Order</span><span class="token operator">:</span><span class="token number">2</span><span class="token class-name">Order</span><span class="token operator">:</span><span class="token number">3</span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-38464.htm">win10下查看pyttorch实际使用的cuda版本，安装多个cuda(cuda9.0和10.0)，并切换cuda版本</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-38285.htm" title="成人怎么学兽医（没基础的成人想学兽医如何开始）">成人怎么学兽医（没基础的成人想学兽医如何开始）</a></li>
+                        <li class="py-2"><a href="/news/article-38286.htm" title="十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）">十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-node-share.htm" title="1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接">1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-38465.htm" title="使用@Order注解调整配置类加载顺序">使用@Order注解调整配置类加载顺序</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-clash-node-github.htm" title="1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享">1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-38464.htm" title="win10下查看pyttorch实际使用的cuda版本，安装多个cuda(cuda9.0和10.0)，并切换cuda版本">win10下查看pyttorch实际使用的cuda版本，安装多个cuda(cuda9.0和10.0)，并切换cuda版本</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
