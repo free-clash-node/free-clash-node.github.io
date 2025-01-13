@@ -2,14 +2,13 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://free-clash-node.github.io/free-nodes/" />
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-39941.htm" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>最新免费Clash节点，2025年每天更新，节点资源大全 - FreeClashNode免费节点地址中文网</title>
-        <meta name="keywords" content="免费Clash订阅,免费V2ray节点, 2025最新Clash节点,Clash节点大全" />
-        <meta name="description" content="每日更新2025年免费节点订阅，FreeClashNode经过严格筛选全球免费节点链接，免费分享最新的Clash(小猫咪)和V2ray节点订阅服务，助您畅享科学上网之路。获取2025年最新的Clash节点订阅，畅游互联网，解锁网络限制，体验稳定高速的免费Clash节点服务，满足用户需求，致力于提供卓越的节点服务。无论新手或资深玩家，FreeClashNode都是您最佳的节点选择。" />
+    <title>C++内存泄漏的定位方法总结</title>
+        <meta name="description" content="一、内存泄漏检测工具Valgrind安装及使用   下载Valgrind工具源码： http://www.valgrind.org/downloads/valgrind-3.14.0.tar.bz2 " />
         <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
@@ -36,7 +35,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="category">
+<body data-page="detail">
     <!-- Header Section Start -->
     <header id="slider-area">
               <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
@@ -78,9 +77,10 @@
                     <div class="carousel-item active">
                         <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
                         <div class="carousel-caption text-left">
-                            <h1>免费节点</h1>
+                            <h1>C++内存泄漏的定位方法总结</h1>
                             <h4>
-                                <a href="/">首页</a> / 免费节点                            </h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -91,87 +91,15 @@
     <!-- Services Section Start -->
     <section id="services" class="section">
         <div class="container">
-                        <div class="row">
+            <div class="row">
                 <div class="col-md-9">
-                    <div class="xcblog-blog-list">
-                                                <div class="row item xcblog-blog-item" data-date="2025-01-13">
-                            <div class="col-md-3">
-                                <a href="/free-nodes/2025-1-13-free-high-speed-nodes.htm" class="xcblog-blog-url">
-                                    <img src="/uploads/20250109/3ae5172706c244f95fc349b751fb7edc.webp" alt="1月13日最新订阅分享 | 22.5M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接" style="width:100%;">
-                                </a>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="about-content pr-30">
-                                    <a href="/free-nodes/2025-1-13-free-high-speed-nodes.htm" class="xcblog-blog-url">
-                                        <h3 class="xcblog-blog-title">1月13日最新订阅分享 | 22.5M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接</h3>
-                                    </a>
-                                    <p>这一次的节点更新覆盖了欧洲、日本、加拿大、韩国、新加坡、香港、美国等地区,最高速度可达22.5 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h3>一、内存泄漏检测工具Valgrind安装及使用</h3> <ul> <li> <p>下载Valgrind工具源码：</p> <p>http://www.valgrind.org/downloads/valgrind-3.14.0.tar.bz2</p> </li> <li> <p>解压缩：</p> <p>tar -jxvf valgrind-3.14.0.tar.bz2</p> </li> <li> <p>进入安装后的目录进行安装：</p> <p>cd valgrind-3.14.0</p> <p>./configure --prefix=/home/NJR/valgrind</p> <p>make</p> <p>make install</p> </li> <li> <p>配置环境变量：</p> <p>vi /etc/profile</p> <p>最后一行加入：export PATH=$PATH:/home/NJR/valgrind/bin</p> <p>生效环境变量：source /etc/profile</p> </li> <li> <p>假设想要检测的执行文件是main,并且想把检测结果输入到文件valgrind_report.log中，就执行下面语句：</p> <p>valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --run-libc-freeres=yes --log-file=./valgrind_report.log ./test</p> <p>如果只想把结果打印到屏幕上，就执行下面语句</p> <p>valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --run-libc-freeres=yes ./test</p> </li> <li> <p>举例子：</p> <pre><code>#include &lt;iostream&gt;  void func(void) {     int *x = (int *)malloc(8 * sizeof(int));     x[9] = 0;              //数组下标越界 }                        //内存未释放    int main(void) {     func();      return 0; }</code></pre> </li> </ul> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 执行编译命令：&nbsp;</p> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gcc -Wall test.cpp -g -fno-inline -o test</p> <p>运行后的结果，可以看到</p> <pre><code>==56206== Memcheck, a memory error detector ==56206== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al. ==56206== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info ==56206== Command: ./test ==56206== Parent PID: 40069 ==56206==  ==56206== Invalid write of size 4 ==56206==    at 0x400514: getMemory() (test.cpp:6) ==56206==    by 0x400525: main (test.cpp:12) ==56206==  Address 0x5201064 is 4 bytes after a block of size 32 alloc'd ==56206==    at 0x4C2DE4D: malloc (vg_replace_malloc.c:299) ==56206==    by 0x400507: getMemory() (test.cpp:5) ==56206==    by 0x400525: main (test.cpp:12) ==56206==  ==56206==  ==56206== HEAP SUMMARY: ==56206==     in use at exit: 32 bytes in 1 blocks ==56206==   total heap usage: 1 allocs, 0 frees, 32 bytes allocated ==56206==  ==56206== 32 bytes in 1 blocks are definitely lost in loss record 1 of 1 ==56206==    at 0x4C2DE4D: malloc (vg_replace_malloc.c:299) ==56206==    by 0x400507: getMemory() (test.cpp:5) ==56206==    by 0x400525: main (test.cpp:12) ==56206==  ==56206== LEAK SUMMARY: ==56206==    definitely lost: 32 bytes in 1 blocks ==56206==    indirectly lost: 0 bytes in 0 blocks ==56206==      possibly lost: 0 bytes in 0 blocks ==56206==    still reachable: 0 bytes in 0 blocks ==56206==         suppressed: 0 bytes in 0 blocks ==56206==  ==56206== For counts of detected and suppressed errors, rerun with: -v ==56206== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)</code></pre> <h3>二、重载全局或局部类内operator new操作符和delete操作符</h3> <p>原理：</p> <p>1.定义一个全局的内存信息表，用来存储内存申请的文件名及位置</p> <p>2.重载operator new/new[]，保存内存申请信息</p> <p>3.重载operator delete/delete[]，删除内存申请信息</p> <p>4.定义一个全局/静态常量，在程序结束时，核查内存信息表是否还存在内存申请信息，如果存在则说明发生内存泄漏，否则无内存泄漏</p> <pre><code class="language-cpp">struct Info {     void *ptr;     const char *file_name;     long line; };  Info ptr_list[1024]; unsigned int ptr_num = 0;  int find_ptr(void *p) {     for (unsigned int i = 0; i &lt; ptr_num; ++i)     {         if (ptr_list[i].ptr == p)         {             return i;         }     }      return -1; }  void del_ptr(unsigned int i) {     while(i+1 &lt; ptr_num)     {         ptr_list[i] = ptr_list[i+1];         i++;     }      ptr_num--; }  struct ProcEnd {     ~ProcEnd()     {         for (unsigned int i = 0; i &lt; ptr_num; ++i)         {             printf("file: %s, line: %d, memory leak!!!\n", ptr_list[i].file_name, ptr_list[i].line);         }     } };  void* operator new(size_t size, const char *file_name, long line) {     printf("global new\n");     void *p = malloc(size);     ptr_list[ptr_num].ptr = p;     ptr_list[ptr_num].file_name = file_name;     ptr_list[ptr_num].line = line;     ptr_num++;     return p; }  void* operator new[](size_t size, const char *file_name, long line) {     return operator new(size, file_name, line); }  void operator delete(void *p) {     int i = find_ptr(p);     if (i != -1)     {         free(p);         del_ptr(i);     }     else     {         printf("delete unknown pointer!!!\n");     } }  void operator delete[](void *p) {     operator delete(p); }  ProcEnd end;  struct BTNode {     BTNode(char val) : val(val), left(nullptr), right(nullptr) {}      char val;     BTNode *left;     BTNode *right; };</code></pre> <p>检验输出结果：</p> <pre><code class="language-cpp">#include &lt;iostream&gt;  int main() {     int *i = new int(0);     return 0; }</code></pre> <p>控制台打印信息：</p> <p>global new<br /> file: ../src/TEST.cpp, line: 197, memory leak!!!</p> <p>可以看出发生了内存泄漏，并提示对应的文件名称和行号。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-39434.htm">宠物店一年利润分析表（宠物店一年利润分析表怎么做）</a></p>
+                                        <p>下一个：<a href="/news/article-39942.htm">STM8S103F3P6 的开发, 烧录和Debug笔记 &#8211; Milton _在线工具</a></p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                                                <div class="row item xcblog-blog-item" data-date="2025-01-12">
-                            <div class="col-md-3">
-                                <a href="/free-nodes/2025-1-12-free-ssr-subscribe.htm" class="xcblog-blog-url">
-                                    <img src="/uploads/20250109/342931bf2fb0715ea426ba68db32f5a9.webp" alt="1月12日最新订阅分享 | 20.4M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接" style="width:100%;">
-                                </a>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="about-content pr-30">
-                                    <a href="/free-nodes/2025-1-12-free-ssr-subscribe.htm" class="xcblog-blog-url">
-                                        <h3 class="xcblog-blog-title">1月12日最新订阅分享 | 20.4M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接</h3>
-                                    </a>
-                                    <p>这一次的节点更新覆盖了香港、美国、日本、韩国、新加坡、欧洲、加拿大等地区,最高速度可达20.4 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                                </div>
-                            </div>
-                        </div>
-                                                <div class="row item xcblog-blog-item" data-date="2025-01-11">
-                            <div class="col-md-3">
-                                <a href="/free-nodes/2025-1-11-clash-v2ray-ss-ssr.htm" class="xcblog-blog-url">
-                                    <img src="/uploads/20250109/5c0759133ad0268c0e384c20ed9715e7.webp" alt="1月11日最新订阅分享 | 19M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接" style="width:100%;">
-                                </a>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="about-content pr-30">
-                                    <a href="/free-nodes/2025-1-11-clash-v2ray-ss-ssr.htm" class="xcblog-blog-url">
-                                        <h3 class="xcblog-blog-title">1月11日最新订阅分享 | 19M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</h3>
-                                    </a>
-                                    <p>这一次的节点更新覆盖了欧洲、新加坡、香港、韩国、加拿大、日本、美国等地区,最高速度可达19 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                                </div>
-                            </div>
-                        </div>
-                                                <div class="row item xcblog-blog-item" data-date="2025-01-10">
-                            <div class="col-md-3">
-                                <a href="/free-nodes/2025-1-10-node-share.htm" class="xcblog-blog-url">
-                                    <img src="/uploads/20250109/3ae5172706c244f95fc349b751fb7edc.webp" alt="1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接" style="width:100%;">
-                                </a>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="about-content pr-30">
-                                    <a href="/free-nodes/2025-1-10-node-share.htm" class="xcblog-blog-url">
-                                        <h3 class="xcblog-blog-title">1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接</h3>
-                                    </a>
-                                    <p>这一次的节点更新覆盖了加拿大、新加坡、日本、香港、美国、韩国、欧洲等地区,最高速度可达18.1 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                                </div>
-                            </div>
-                        </div>
-                                                <div class="row item xcblog-blog-item" data-date="2025-01-09">
-                            <div class="col-md-3">
-                                <a href="/free-nodes/2025-1-9-clash-node-github.htm" class="xcblog-blog-url">
-                                    <img src="/uploads/20250109/ed15cc982fed5e2a654d7659abc3b303.webp" alt="1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享" style="width:100%;">
-                                </a>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="about-content pr-30">
-                                    <a href="/free-nodes/2025-1-9-clash-node-github.htm" class="xcblog-blog-url">
-                                        <h3 class="xcblog-blog-title">1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享</h3>
-                                    </a>
-                                    <p>这一次的节点更新覆盖了香港、欧洲、韩国、新加坡、加拿大、美国、日本等地区,最高速度可达21.1 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                                            </div>
-                </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
     <div class="panel-heading">
@@ -179,15 +107,15 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-node-share.htm" title="1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接">1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-clash-node-github.htm" title="1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享">1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-39434.htm" title="宠物店一年利润分析表（宠物店一年利润分析表怎么做）">宠物店一年利润分析表（宠物店一年利润分析表怎么做）</a></li>
+                        <li class="py-2"><a href="/news/article-38285.htm" title="成人怎么学兽医（没基础的成人想学兽医如何开始）">成人怎么学兽医（没基础的成人想学兽医如何开始）</a></li>
+                        <li class="py-2"><a href="/news/article-38465.htm" title="使用@Order注解调整配置类加载顺序">使用@Order注解调整配置类加载顺序</a></li>
+                        <li class="py-2"><a href="/news/article-39942.htm" title="STM8S103F3P6 的开发, 烧录和Debug笔记 &#8211; Milton _在线工具">STM8S103F3P6 的开发, 烧录和Debug笔记 &#8211; Milton _在线工具</a></li>
                         <li class="py-2"><a href="/news/article-38948.htm" title="58同城领养宠物的平台（58同城宠物猫免费领养）">58同城领养宠物的平台（58同城宠物猫免费领养）</a></li>
                         <li class="py-2"><a href="/news/article-38947.htm" title="宠物口粮利润大吗 宠物口粮利润大吗知乎">宠物口粮利润大吗 宠物口粮利润大吗知乎</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-9-clash-node-github.htm" title="1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享">1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享</a></li>
-                        <li class="py-2"><a href="/news/article-38464.htm" title="win10下查看pyttorch实际使用的cuda版本，安装多个cuda(cuda9.0和10.0)，并切换cuda版本">win10下查看pyttorch实际使用的cuda版本，安装多个cuda(cuda9.0和10.0)，并切换cuda版本</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-11-clash-v2ray-ss-ssr.htm" title="1月11日最新订阅分享 | 19M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接">1月11日最新订阅分享 | 19M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-10-node-share.htm" title="1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接">1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-high-speed-nodes.htm" title="1月13日最新订阅分享 | 22.5M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接">1月13日最新订阅分享 | 22.5M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/news/article-39942.htm" title="STM8S103F3P6 的开发, 烧录和Debug笔记 &#8211; Milton _在线工具">STM8S103F3P6 的开发, 烧录和Debug笔记 &#8211; Milton _在线工具</a></li>
-                        <li class="py-2"><a href="/news/article-38465.htm" title="使用@Order注解调整配置类加载顺序">使用@Order注解调整配置类加载顺序</a></li>
+                        <li class="py-2"><a href="/news/article-39433.htm" title="vue-cli项目添加骨架屏多种方式，自动生成骨架屏">vue-cli项目添加骨架屏多种方式，自动生成骨架屏</a></li>
                         <li class="py-2"><a href="/news/article-38286.htm" title="十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）">十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）</a></li>
                     </ul>
     </div>
