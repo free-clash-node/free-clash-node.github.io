@@ -2,24 +2,24 @@
 <html lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://free-clash-node.github.io/news/article-42407.htm" />
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-42909.htm" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>基于vue-seamless-scroll实现无缝滚动效果_vue.js</title>
-        <meta name="description" content="vue中，基于vue-seamless-scroll无缝滚动，供大家参考，具体内容如下 1、安装vue-seamless-scroll  npm install vue-seamless-scroll" />
+    <title>使用pandas读取文件时的注意事项</title>
+        <meta name="description" content="读取文件 import pandas as pd df_news = pd.read_table(‘E:\机器学习数据集\新闻分类任务\data\val.txt’,names[‘category’,‘" />
         <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
 
     <meta name="author" content="FreeClashNode免费节点地址中文网">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://free-clash-node.github.io/news/article-42407.htm" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-42909.htm" />
     <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
-    <meta property="og:title" content="基于vue-seamless-scroll实现无缝滚动效果_vue.js" />
-    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/43bfa45aaadae87ffded7a531f43fcc4.webp" />
-        <meta property="og:release_date" content="2025-01-18T07:14:37" />
-    <meta property="og:updated_time" content="2025-01-18T07:14:37" />
-        <meta property="og:description" content="vue中，基于vue-seamless-scroll无缝滚动，供大家参考，具体内容如下 1、安装vue-seamless-scroll  npm install vue-seamless-scroll" />
+    <meta property="og:title" content="使用pandas读取文件时的注意事项" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/8b582c0f57b8e6909c14e6b172d69c76.webp" />
+        <meta property="og:release_date" content="2025-01-19T07:10:01" />
+    <meta property="og:updated_time" content="2025-01-19T07:10:01" />
+        <meta property="og:description" content="读取文件 import pandas as pd df_news = pd.read_table(‘E:\机器学习数据集\新闻分类任务\data\val.txt’,names[‘category’,‘" />
         
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
@@ -88,7 +88,7 @@
                     <div class="carousel-item active">
                         <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
                         <div class="carousel-caption text-left">
-                            <h1>基于vue-seamless-scroll实现无缝滚动效果_vue.js</h1>
+                            <h1>使用pandas读取文件时的注意事项</h1>
                             <h4>
                                 <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
                             </h4>
@@ -105,10 +105,10 @@
             <div class="row">
                 <div class="col-md-9">
                                     <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
-                  				  				  				<p>vue中，基于vue-seamless-scroll无缝滚动，供大家参考，具体内容如下</p> <p>1、安装vue-seamless-scroll</p> <div class="ay1code"> <pre class="brush:js;">npm install vue-seamless-scroll --save　</pre> </div> <p>2、引入组件</p> <p>全局引入在main.js中添加</p> <div class="ay1code"> <pre class="brush:js;">import scroll from 'vue-seamless-scroll'  Vue.use(scroll)</pre> </div> <p>组件局部引入</p> <div class="ay1code"> <pre class="brush:js;">&lt;vue-seamless-scroll&gt;&lt;/vue-seamless-scroll&gt;  import vueSeamlessScroll from 'vue-seamless-scroll'  components: {          vueSeamlessScroll  },</pre> </div> <p>3、配置参数</p> <div class="ay1code"> <pre class="brush:js;">// 监听属性 类似于data概念  computed: {          defaultOption () {                  return {                      step: 0.2, // 数值越大速度滚动越快                      limitMoveNum: 2, // 开始无缝滚动的数据量 this.dataList.length                      hoverStop: true, // 是否开启鼠标悬停stop                      direction: 1, // 0向下 1向上 2向左 3向右                      openWatch: true, // 开启数据实时监控刷新dom                      singleHeight: 0, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction =&gt; 0/1                      singleWidth: 0, // 单步运动停止的宽度(默认值0是无缝不停止的滚动) direction =&gt; 2/3                      waitTime: 1000 // 单步运动停止的时间(默认值1000ms)                  }              }             },　</pre> </div> <p>4、完整实例代码</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;      &lt;div class="" style="padding: 50px;"&gt;          &lt;div class="page-example3" style=""&gt;              &lt;vue-seamless-scroll :data="listData" :class-option="defaultOption" &gt;                  &lt;ul class="ul-scoll"&gt;                      &lt;li v-for="(item, index) in listData" :key='index'&gt;                          &lt;span class="title"&gt;{{item.title}}：&lt;/span&gt;&lt;span class="date"&gt;{{item.time}}&lt;/span&gt;                      &lt;/li&gt;                  &lt;/ul&gt;              &lt;/vue-seamless-scroll&gt;          &lt;/div&gt;      &lt;/div&gt;  &lt;/template&gt;     &lt;script&gt;      import vueSeamlessScroll from 'vue-seamless-scroll'      export default {          name: 'Example3',          data() {              // 这里存放数据              return {                  listData: []              }          },          // import引入的组件需要注入到对象中才能使用          components: {              vueSeamlessScroll          },          // 监听属性 类似于data概念          computed: {              defaultOption () {                  return {                      step: 1, // 数值越大速度滚动越快                      limitMoveNum: 2, // 开始无缝滚动的数据量 this.dataList.length                      hoverStop: true, // 是否开启鼠标悬停stop                      direction: 1, // 0向下 1向上 2向左 3向右                      openWatch: true, // 开启数据实时监控刷新dom                      singleHeight: 0, // 单步运动停止的高度(默认值0是无缝不停止的滚动) direction =&gt; 0/1                      singleWidth: 0, // 单步运动停止的宽度(默认值0是无缝不停止的滚动) direction =&gt; 2/3                      waitTime: 1000 // 单步运动停止的时间(默认值1000ms)                  }              }             },          // 方法集合          methods: {},          // 监控data中的数据变化          watch: {},          // 生命周期 - 创建完成（可以访问当前this实例）          created() {             },          // 生命周期 - 挂载完成（可以访问DOM元素）          mounted() {              for(let i = 0 ; i &lt; 15 ; i++){                  let j = {                      title:'无缝滚动第几条啊啊啊-'+i,                      time: '2020-04-10'                  }                  this.listData.push(j)              }          }      }  &lt;/script&gt;     &lt;style scoped lang="scss"&gt;      //@import url(); 引入公共css类      .page-example3{          width: 400px;          height: 200px;          overflow: hidden;          border: 1px solid #283dff;          .ul-scoll{              li{                  margin: 6px;                  padding: 5px;                  background: rgba(198, 142, 226, 0.4);              }          }      }  &lt;/style&gt;</pre> </div> 			                <div class="clearfix"></div>
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>读取文件<br /> import pandas as pd<br /> df_news = pd.read_table(‘E:\机器学习数据集\新闻分类任务\data\val.txt’,names[‘category’,‘theme’,‘URL’,‘content’],encoding=‘utf-8’)<br /> 报错：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220818/fb45aad21f9c791e4017f92db41b8993.jpg" alt="使用pandas读取文件时的注意事项"><br /> OSError: Initializing from file failed<br /> 文件初始化失败</p> <p>修改：<br /> df_news = pd.read_table(‘E:\机器学习数据集\新闻分类任务\data\val.txt’, names=[‘category’,‘theme’,‘URL’,‘content’],encoding=‘utf-8’,engine = ‘python’)<br /> 在后面加上engine = ‘python’</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-41916.htm">宠物粮食品牌排行榜前十 宠物粮食品牌排行榜前十名</a></p>
-                                        <p>下一个：<a href="/news/article-42408.htm">被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）</a></p>
+                                        <p>上一个：<a href="/news/article-42408.htm">被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）</a></p>
+                                        <p>下一个：<a href="/news/article-42910.htm">新疆和田哪里有宠物医院呀（和田哪里有宠物店）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -118,16 +118,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-1-11-clash-v2ray-ss-ssr.htm" title="1月11日最新订阅分享 | 19M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接">1月11日最新订阅分享 | 19M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/news/article-38286.htm" title="十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）">十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-subscribe-node.htm" title="1月16日最新订阅分享 | 18.1M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接">1月16日最新订阅分享 | 18.1M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/news/article-39434.htm" title="宠物店一年利润分析表（宠物店一年利润分析表怎么做）">宠物店一年利润分析表（宠物店一年利润分析表怎么做）</a></li>
-                        <li class="py-2"><a href="/news/article-42408.htm" title="被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）">被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）</a></li>
-                        <li class="py-2"><a href="/news/article-40423.htm" title="疫苗空瓶回收登记表怎么填写（疫苗空瓶回收登记表怎么填写啊）">疫苗空瓶回收登记表怎么填写（疫苗空瓶回收登记表怎么填写啊）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-19-free-ssr-subscribe.htm" title="1月19日最新订阅分享 | 18.1M/S|2025年SSR/Shadowrocket/Clash/V2ray免费节点地址链接">1月19日最新订阅分享 | 18.1M/S|2025年SSR/Shadowrocket/Clash/V2ray免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/news/article-41916.htm" title="宠物粮食品牌排行榜前十 宠物粮食品牌排行榜前十名">宠物粮食品牌排行榜前十 宠物粮食品牌排行榜前十名</a></li>
+                        <li class="py-2"><a href="/news/article-40915.htm" title="宠物医生资格（宠物医生资格证怎么考取）">宠物医生资格（宠物医生资格证怎么考取）</a></li>
                         <li class="py-2"><a href="/news/article-42407.htm" title="基于vue-seamless-scroll实现无缝滚动效果_vue.js">基于vue-seamless-scroll实现无缝滚动效果_vue.js</a></li>
-                        <li class="py-2"><a href="/news/article-41915.htm" title="厦门宠物领养中心电话号码 厦门宠物领养中心电话号码多少">厦门宠物领养中心电话号码 厦门宠物领养中心电话号码多少</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-9-clash-node-github.htm" title="1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享">1月9日最新机场订阅 | 21.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接分享</a></li>
+                        <li class="py-2"><a href="/news/article-41405.htm" title="猫驱虫多久一次体内体外同驱（猫咪驱虫体内体外多久一次）">猫驱虫多久一次体内体外同驱（猫咪驱虫体内体外多久一次）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-node-share.htm" title="1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接">1月10日最新订阅分享 | 18.1M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-38286.htm" title="十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）">十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）</a></li>
+                        <li class="py-2"><a href="/news/article-42408.htm" title="被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）">被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-14-free-subscribe-node.htm" title="1月14日最新订阅分享 | 22.6M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接">1月14日最新订阅分享 | 22.6M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-38464.htm" title="win10下查看pyttorch实际使用的cuda版本，安装多个cuda(cuda9.0和10.0)，并切换cuda版本">win10下查看pyttorch实际使用的cuda版本，安装多个cuda(cuda9.0和10.0)，并切换cuda版本</a></li>
+                        <li class="py-2"><a href="/news/article-41916.htm" title="宠物粮食品牌排行榜前十 宠物粮食品牌排行榜前十名">宠物粮食品牌排行榜前十 宠物粮食品牌排行榜前十名</a></li>
                     </ul>
     </div>
 </div>
