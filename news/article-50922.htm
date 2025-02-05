@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-50922.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>css文本垂直居中详解</title>
+        <meta name="description" content="文本垂直居中，分为“单行”与“多行”文本两种情况，多行又分为“固定”与“不固定”高度两种情况，看下图效果。  文本垂直居中   height 搭配 line-height 仅可实现单行文本垂直居中，不" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-50922.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="css文本垂直居中详解" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/efbb60c7fac4868f68ff02e4a913800b.webp" />
+        <meta property="og:release_date" content="2025-02-04T00:27:23" />
+    <meta property="og:updated_time" content="2025-02-04T00:27:23" />
+        <meta property="og:description" content="文本垂直居中，分为“单行”与“多行”文本两种情况，多行又分为“固定”与“不固定”高度两种情况，看下图效果。  文本垂直居中   height 搭配 line-height 仅可实现单行文本垂直居中，不" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="css文本垂直居中详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>css文本垂直居中详解</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p>文本垂直居中，分为“单行”与“多行”文本两种情况，多行又分为“固定”与“不固定”高度两种情况，看下图效果。</p> <div class="pgc-img"><img decoding="async" src="http://img.555519.xyz/uploads3/20220606/1566d27dc9767f11484515a4866d7ba0.jpg" alt="css文本垂直居中详解"></p> <p class="pgc-img-caption">文本垂直居中</p> </div> </h1> <p>height 搭配 line-height 仅可实现单行文本垂直居中，不可用于多行文本。</p> <p>适用：单行文本</p> <pre class="has"><code>.text1 {  width: 200px;  height: 100px;  line-height: 100px;  background: rgb(0, 151, 246);  color: #fff;  text-align: center;}</code></pre> </h1> <p>如果元素高度不固定，可采用 padding-top 与 padding-bottom 同值以实现垂直居中。</p> <p>适用：单行与多行文本。</p> <pre class="has"><code>.text2 {  padding: 20px;  width: 200px;  background: rgb(0, 151, 246);  color: #fff;}</code></pre> </h1> <p>display: table-cell 与 vertical-align: middle 搭配。</p> <p>适用：单行与多行文本。</p> <p>注意：此种情况 margin 不起作用，因为 margin 对 display: table* 情况是无效的。</p> <pre class="has"><code>.text3 {  width: 200px;  height: 100px;  background: rgb(0, 151, 246);  color: #fff;  text-align: center;  display: table-cell;  vertical-align: middle;  border: 1px solid #000;}</code></pre> </h1> <p>利用 flex 布局搭配 align-items: center</p> <p>适用：单行与多行文本。</p> <p>注意：flex 需要兼容写法。</p> <pre class="has"><code>.text4 {  display: flex;  justify-content: center;  align-items: center;  margin-top: 20px;  padding: 0 20px;  width: 200px;  height: 100px;  background: rgb(0, 151, 246);  color: #fff;}</code></pre> </h1> <p>利用 grid 布局(grid or inline-grid)搭配 align-items: center。</p> <p>适用：单行与多行文本。</p> <p>注意：除了 IE，其他大部分浏览器均已支持。</p> <pre class="has"><code>.text5 {  display: grid;  align-items: center;  padding: 0 20px;  width: 200px;  height: 100px;  background: rgb(0, 151, 246);  color: #fff;}</code></pre> </div> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-50395.htm">宠物粮食市场竞争与效益分析报告（宠物粮食市场份额）</a></p>
+                                        <p>下一个：<a href="/news/article-50923.htm">HCNP Routing&amp;Switching之Super VLAN_在线工具</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-46868.htm" title="动物医院收费标准最新表格图片大全（动物医院在哪个位置）">动物医院收费标准最新表格图片大全（动物医院在哪个位置）</a></li>
+                        <li class="py-2"><a href="/news/article-38286.htm" title="十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）">十大宠物品牌排行榜图片（十大宠物品牌排行榜图片）</a></li>
+                        <li class="py-2"><a href="/news/article-47838.htm" title="学美容要学多久才能出师相信广州一路时尚好（美容学校一般几年毕业全上广州一路时尚好）">学美容要学多久才能出师相信广州一路时尚好（美容学校一般几年毕业全上广州一路时尚好）</a></li>
+                        <li class="py-2"><a href="/news/article-48282.htm" title="湖北领养狗狗 湖北领养狗狗多少钱">湖北领养狗狗 湖北领养狗狗多少钱</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-28-clash-node-github.htm" title="1月28日最新订阅分享 | 19.9M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接">1月28日最新订阅分享 | 19.9M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-13-free-high-speed-nodes.htm" title="1月13日最新订阅分享 | 22.5M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接">1月13日最新订阅分享 | 22.5M/S|2025年Shadowrocket/V2ray/SSR/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-42910.htm" title="新疆和田哪里有宠物医院呀（和田哪里有宠物店）">新疆和田哪里有宠物医院呀（和田哪里有宠物店）</a></li>
+                        <li class="py-2"><a href="/news/article-40423.htm" title="疫苗空瓶回收登记表怎么填写（疫苗空瓶回收登记表怎么填写啊）">疫苗空瓶回收登记表怎么填写（疫苗空瓶回收登记表怎么填写啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-18-free-clash-subscribe.htm" title="1月18日最新订阅分享 | 18M/S|2025年V2ray/Shadowrocket/SSR/Clash免费节点地址链接">1月18日最新订阅分享 | 18M/S|2025年V2ray/Shadowrocket/SSR/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-free-ssr-subscribe.htm" title="1月27日最新订阅分享 | 18.4M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接">1月27日最新订阅分享 | 18.4M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">15</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
