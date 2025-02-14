@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-55211.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>IDEA使用Tomcat部署项目</title>
+        <meta name="description" content="介绍 参考视频教程:https://www.bilibili.com/video/BV1Qf4y1T7Hx?p=92https://www.bilibili.com/video/BV1Qf4y1T7H" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-55211.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="IDEA使用Tomcat部署项目" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/fae900851609a4627f7dc20022331589.webp" />
+        <meta property="og:release_date" content="2025-02-12T09:07:06" />
+    <meta property="og:updated_time" content="2025-02-12T09:07:06" />
+        <meta property="og:description" content="介绍 参考视频教程:https://www.bilibili.com/video/BV1Qf4y1T7Hx?p=92https://www.bilibili.com/video/BV1Qf4y1T7H" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="IDEA使用Tomcat部署项目">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>IDEA使用Tomcat部署项目</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <h2><a id="_0" rel="nofollow"></a>介绍</h2> <p>参考视频教程:<br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.bilibili.com/video/BV1Qf4y1T7Hx?p=93"  rel="nofollow">https://www.bilibili.com/video/BV1Qf4y1T7Hx?p=92</a><br /><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.bilibili.com/video/BV1Qf4y1T7Hx?p=93"  rel="nofollow">https://www.bilibili.com/video/BV1Qf4y1T7Hx?p=93</a></p> <ol> <li>集成本地Tomcat</li> <li>Tomcat mvaen插件配置tomcat<br /> 在IDEA中集成使用Tomcat有两种方式，分别是<mark>集成本地Tomcat</mark>和<mark>Tomcat Maven插件</mark></li> </ol> <h2><a id="1_Tomcat_7" rel="nofollow"></a>1. 集成本地Tomcat</h2> <p>整体流程预览:<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/cc4c4eb2028776e9e928d8c1786ef209.jpg" alt="IDEA使用Tomcat部署项目"></p> <h3><a id="11tomcat_10" rel="nofollow"></a>1.1配置本地tomcat</h3> <p>1.Add Configurations<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/e13660be4d6c16c53ffd85cc716f7a09.jpg" alt="IDEA使用Tomcat部署项目"><br /> 2.点击+号----&gt;Tomcat server----&gt;local<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/0d97c4ecd5914a0e8153e5d9bd38a238.jpg" alt="IDEA使用Tomcat部署项目"><br /> 3.修改服务器名称----&gt;点击配置Configurations<br /> 默认端口号8080</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/27de1640c0b0a5cdeab22611c40e2193.jpg" alt="IDEA使用Tomcat部署项目"><br /> 4.选择本地的tomcat目录<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/290ffe131ad3b6c307979b2317182978.jpg" alt="IDEA使用Tomcat部署项目"><br /> 5.部署项目<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/3e09b2afb158d7b38d6eb3a1ff62e27d.jpg" alt="IDEA使用Tomcat部署项目"><br /> 选择要部署的项目----&gt;点击OK<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/c703732b13fb4007120f0dbedf3f888a.jpg" alt="IDEA使用Tomcat部署项目"><br /> Application context表示虚拟目录一般和web项目名称相同<br /> 这里为例演示设置为helloworld, 那么到时候我访问这个web项目下的xxx资源就是</p> <pre><code class="prism language-html">http://localhost:8080/helloworld/xxx</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/648edb938ca2b0548c79d3dda1ac117b.jpg" alt="IDEA使用Tomcat部署项目"></p> <h3><a id="12tomcat_31" rel="nofollow"></a>1.2启动tomcat进行测试</h3> <p>1.在webapp目录编写一个<code>test.html</code>页面进行测试(注意:web-info和test.html文件同级)， 然后点击tomcat8旁边的按钮启动tomcat服务器<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/746fa3cdcb6acbd5a63156d5f1306a00.jpg" alt="IDEA使用Tomcat部署项目"><br /> 2.等待服务器启动成功在浏览器地址栏输入</p> <pre><code>http://localhost:8080/虚拟路径/test.html</code></pre> <p><strong>注意</strong>:虚拟路径是自己设置的Application context<br /> 例如我这里Application context刚刚设置为helloworld那么就用</p> <pre><code>http://localhost:8080/helloworld/test.html</code></pre> <p>即可访问该界面， 如下图所示<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/6a602dcbd8cf6a0b5955d314266293c1.jpg" alt="IDEA使用Tomcat部署项目"></p> <h3><a id="13_48" rel="nofollow"></a>1.3关闭服务器&amp;重启</h3> <p>点击左侧就可完成关闭和重启<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/1bb6bf11702559042f4ae84f92dd3dc8.jpg" alt="IDEA使用Tomcat部署项目"></p> <h2><a id="2_Tomcat_mvaentomcat_52" rel="nofollow"></a>2. Tomcat mvaen插件配置tomcat(推荐使用)</h2> <p>总体流程预览:<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/11ca6962bbce6720f3d4a5fd4855f2dd.jpg" alt="IDEA使用Tomcat部署项目"></p> <h3><a id="21pomxmlTomcat_55" rel="nofollow"></a>2.1.在pom.xml中添加Tomcat插件</h3> <p>找pom.xml文件----&gt; alt+insert快捷键-----&gt;Plugin Template<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/6e0f1a00a1a17ea47f8f1c7cf822f943.jpg" alt="IDEA使用Tomcat部署项目"><br /> 添加下面这串代码到pom.xml中</p> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- tomcat插件 --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.tomcat.maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>tomcat7-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">&gt;</span></span></code></pre> <p>添加成功之后记得保存刷新:<br /> 这里Run Maven如果你没有就去下载一个Maven Helper插件<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/4243c372e7dc97f36d62981bf51555ee.jpg" alt="IDEA使用Tomcat部署项目"></p> <h3><a id="22Maven_Helper_73" rel="nofollow"></a>2.2使用Maven Helper插件快速启动项目</h3> <p>1.选中项目，右键–&gt;Run Maven --&gt; tomcat7:run<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/f727d6782ec4491afef11e06b6a8f67b.jpg" alt="IDEA使用Tomcat部署项目"><br /> 成功运行之后打开浏览器</p> <pre><code class="prism language-html">http://localhost:8080/tomcat_demo2/test.html</code></pre> <p>注意: 默认的端口号是8080， 默认的项目访问路径(虚拟路径)是web项目名称这里就是tomcat_demo2</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/42363c459cc66454ff4ee98376de42af.jpg" alt="IDEA使用Tomcat部署项目"></p> <h3><a id="23_84" rel="nofollow"></a>2.3修改端口号和虚拟路径(如果有需要)</h3> <p>在刚刚的文件中添加标签内</p> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>8888<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span><span class="token punctuation">&gt;</span></span>/helloworld<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span></code></pre> <p>添加之后为</p> <pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugins</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- tomcat插件 --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>plugin</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.apache.tomcat.maven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>tomcat7-maven-plugin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>2.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>port</span><span class="token punctuation">&gt;</span></span>8888<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>port</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>path</span><span class="token punctuation">&gt;</span></span>/helloworld<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>path</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugin</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>plugins</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">&gt;</span></span></code></pre> <p>记得保存刷新(每次修改pom.xm文件之后要保存刷新)<br /> 重启浏览器打开输入</p> <pre><code class="prism language-html">http://localhost:8888/helloworld/test.html</code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220608/a65ef50bcaeed4d106015e897cc3b8ad.jpg" alt="IDEA使用Tomcat部署项目"><br /> javaee学习笔记， 如有错误欢迎交流指正</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-54658.htm">北京中农大动物医院有限公司上班怎么样 北京中农大动物医院有限公司上班怎么样啊</a></p>
+                                        <p>下一个：<a href="/news/article-55212.htm">附近哪有狗粮买（附近买狗粮的地方）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-54112.htm" title="宠物粮食行业发展前景分析报告总结范文（宠物粮行业环境分析）">宠物粮食行业发展前景分析报告总结范文（宠物粮行业环境分析）</a></li>
+                        <li class="py-2"><a href="/news/article-46368.htm" title="猫轻微抓伤需要***吗（宠物猫轻微抓伤需要***吗）">猫轻微抓伤需要***吗（宠物猫轻微抓伤需要***吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-subscribe-node.htm" title="1月16日最新订阅分享 | 18.1M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接">1月16日最新订阅分享 | 18.1M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-41404.htm" title="生产宠物粮的工厂有哪些岗位工作（生产宠物粮前景如何）">生产宠物粮的工厂有哪些岗位工作（生产宠物粮前景如何）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-24-clash-windows.htm" title="1月24日最新订阅分享 | 18.5M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接">1月24日最新订阅分享 | 18.5M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-40421.htm" title="上海宠物美容师培训学校哪家好（上海宠物美容师宠物美容培训学校）">上海宠物美容师培训学校哪家好（上海宠物美容师宠物美容培训学校）</a></li>
+                        <li class="py-2"><a href="/news/article-55766.htm" title="广州宠物领养中心在哪里有啊（广州宠物领养中心具体地址）">广州宠物领养中心在哪里有啊（广州宠物领养中心具体地址）</a></li>
+                        <li class="py-2"><a href="/news/article-49870.htm" title="拼音转换&#8212;Python自然语言处理（6）">拼音转换&#8212;Python自然语言处理（6）</a></li>
+                        <li class="py-2"><a href="/news/article-53022.htm" title="宠物用品一件代发网站有哪些品牌（宠物用品一件代发进货渠道）">宠物用品一件代发网站有哪些品牌（宠物用品一件代发进货渠道）</a></li>
+                        <li class="py-2"><a href="/news/article-41405.htm" title="猫驱虫多久一次体内体外同驱（猫咪驱虫体内体外多久一次）">猫驱虫多久一次体内体外同驱（猫咪驱虫体内体外多久一次）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
