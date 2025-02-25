@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-62663.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MySQL 表数据多久刷一次盘</title>
+        <meta name="description" content="前言 事情是这样的，在某乎的邀请回答中看到了这个问题： - 然后当时我没多想就啪一下写下来这样的答案：  这个其实要通过 MySQL 后台线程来刷的，在 Buffer Pool 中被修改的过的 Pag" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-62663.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="MySQL 表数据多久刷一次盘" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/79136aecc59a368be1451dc70d32774b.webp" />
+        <meta property="og:release_date" content="2025-02-25T04:59:16" />
+    <meta property="og:updated_time" content="2025-02-25T04:59:16" />
+        <meta property="og:description" content="前言 事情是这样的，在某乎的邀请回答中看到了这个问题： - 然后当时我没多想就啪一下写下来这样的答案：  这个其实要通过 MySQL 后台线程来刷的，在 Buffer Pool 中被修改的过的 Pag" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="MySQL 表数据多久刷一次盘">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>MySQL 表数据多久刷一次盘</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<section id="nice" data-tool="mdnice编辑器" data-website="https://www.mdnice.com" style="padding: 0 10px; word-spacing: 0; word-wrap: break-word; text-align: left; line-height: 1.6; letter-spacing: 0.034em; color: rgba(63, 63, 63, 1); font-size: 16px; font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, &quot;PingFang SC&quot;, Cambria, Cochin, Georgia, Times, &quot;Times New Roman&quot;, serif"> <h2 data-tool="mdnice编辑器" style="padding: 0; font-weight: bold; color: rgba(0, 0, 0, 1); font-size: 22px; display: block; text-align: center; background-image: url(&quot;https://files.mdnice.com/koala-2.png&quot;); background-position: center; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 50px; margin-top: 1em; margin-bottom: 10px"><span class="prefix" style="display: none"></span><span class="content" style="text-align: center; display: inline-block; height: 38px; line-height: 42px; color: rgba(72, 179, 120, 1); background-position: left; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 63px; margin-top: 38px; font-size: 18px; margin-bottom: 10px">前言</span><span class="suffix"></span></h2> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">事情是这样的，在某乎的邀请回答中看到了这个问题：</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">-<img decoding="async" src="http://img.555519.xyz/uploads3/20220510/e8072488630dc60fd3dc0d60defcfcf3.jpg" alt="MySQL 表数据多久刷一次盘"></p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">然后当时我没多想就啪一下写下来这样的答案：</p> <blockquote class="multiquote-1" data-tool="mdnice编辑器" style="border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgba(53, 179, 120, 1); font-size: 0.9em; overflow: auto; overflow-scrolling: touch; background: rgba(251, 249, 253, 1); color: rgba(106, 115, 125, 1); padding: 15px 20px; margin-bottom: 20px; margin-top: 20px; line-height: 27px; display: block"> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">这个其实要通过 MySQL 后台线程来刷的，在 Buffer Pool 中被修改的过的 Page（页）都会被标记成脏页，放到一个链表（Flush 链表）里。</p> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">然后 MySQL 通过启动后台线程，在满足条件时将 Flush 链表中的脏页刷入磁盘。</p> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">满足的条件是：<strong style="font-weight: bold; line-height: 1.75em; color: rgba(74, 74, 74, 1)">脏页的数量</strong>达到了 Buffer Pool 中页数量的 **10%<strong style="font-weight: bold; line-height: 1.75em; color: rgba(74, 74, 74, 1)">，当然 10% 这个值是可变的，通过配置项 innodb_max_dirty_pages_pct_lwm 来配置的，其默认值为 10%，并且这个值也必须小于另一个配置 innodb_max_dirty_pages_pct 的值（</strong>90%**）。</p> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">至于启多少个线程，则是由另一个变量 innodb_page_cleaners 来控制的，默认是 4.一般都不会去改这个。</p> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">大概就是这样。</p> </blockquote> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">但是，后面有兄弟在下面说：”我唔知你喺讲乜“。</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">后面我回过头去看，当时写的确实有点过于跳跃了，过一段时间再去看有些不是那么连贯，打算重新把这个事情讲清楚。</p> <h2 data-tool="mdnice编辑器" style="padding: 0; font-weight: bold; color: rgba(0, 0, 0, 1); font-size: 22px; display: block; text-align: center; background-image: url(&quot;https://files.mdnice.com/koala-2.png&quot;); background-position: center; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 50px; margin-top: 1em; margin-bottom: 10px"><span class="prefix" style="display: none"></span><span class="content" style="text-align: center; display: inline-block; height: 38px; line-height: 42px; color: rgba(72, 179, 120, 1); background-position: left; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 63px; margin-top: 38px; font-size: 18px; margin-bottom: 10px">1. 表数据</span><span class="suffix"></span></h2> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">我们这篇「短文」讨论的是【MySQL 表数据多久刷一次盘】，从这个标题中我们可以分裂成两个问题：</p> <figure data-tool="mdnice编辑器" style="margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center"><img decoding="async" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h10cfoe848j20b108j3yh.jpg" alt="MySQL 表数据多久刷一次盘"></figure> <ol data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; color: rgba(0, 0, 0, 1); list-style-type: decimal"> <li> <section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgba(1, 1, 1, 1); font-weight: 500">刷什么到磁盘</section> </li> <li> <section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgba(1, 1, 1, 1); font-weight: 500">什么时候刷到磁盘</section> </li> </ol> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">我们分开来讨论。</p> <h2 data-tool="mdnice编辑器" style="padding: 0; font-weight: bold; color: rgba(0, 0, 0, 1); font-size: 22px; display: block; text-align: center; background-image: url(&quot;https://files.mdnice.com/koala-2.png&quot;); background-position: center; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 50px; margin-top: 1em; margin-bottom: 10px"><span class="prefix" style="display: none"></span><span class="content" style="text-align: center; display: inline-block; height: 38px; line-height: 42px; color: rgba(72, 179, 120, 1); background-position: left; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 63px; margin-top: 38px; font-size: 18px; margin-bottom: 10px">2. 刷什么到磁盘</span><span class="suffix"></span></h2> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">看上去有点废话，肯定是将数据刷入磁盘。所以我们更多需要讨论的是【数据是以什么样的形式被刷入磁盘】。</p> <blockquote class="multiquote-1" data-tool="mdnice编辑器" style="border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgba(53, 179, 120, 1); font-size: 0.9em; overflow: auto; overflow-scrolling: touch; background: rgba(251, 249, 253, 1); color: rgba(106, 115, 125, 1); padding: 15px 20px; margin-bottom: 20px; margin-top: 20px; line-height: 27px; display: block"> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">答案是页</p> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">对页不太了解的可以去看看之前写的文章：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mp.weixin.qq.com/s/UgLcleeeAbXPQYp61JB0qQ"  style="word-wrap: break-word; font-weight: bold; color: rgba(72, 179, 120, 1); text-decoration: none; border-bottom: 1px solid rgba(72, 179, 120, 1)" rel="nofollow">MySQL 页完全指南——浅入深出页的原理</a></p> </blockquote> <figure data-tool="mdnice编辑器" style="margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center"><img decoding="async" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h10checj0xj20b106aa9z.jpg" alt="MySQL 表数据多久刷一次盘"></figure> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">在 InnoDB 中，<strong style="font-weight: bold; line-height: 1.75em; color: rgba(74, 74, 74, 1)">页</strong>是数据被管理的最小的单位。当使用 InnoDB 作为存储引擎的 MySQL 运行时，表中一行一行的数据会被组织在一页一页当中，放在 Buffer Pool 中。</p> <blockquote class="multiquote-1" data-tool="mdnice编辑器" style="border-top: none; border-right: none; border-bottom: none; border-left: 3px solid rgba(53, 179, 120, 1); font-size: 0.9em; overflow: auto; overflow-scrolling: touch; background: rgba(251, 249, 253, 1); color: rgba(106, 115, 125, 1); padding: 15px 20px; margin-bottom: 20px; margin-top: 20px; line-height: 27px; display: block"> <p style="padding: 0; margin: 0; line-height: 26px; font-size: 15px; color: rgba(89, 89, 89, 1)">Buffer Pool 可以看另一篇：<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mp.weixin.qq.com/s/D-4m5RZwOjhJpLytiJ5FdA"  style="word-wrap: break-word; font-weight: bold; color: rgba(72, 179, 120, 1); text-decoration: none; border-bottom: 1px solid rgba(72, 179, 120, 1)" rel="nofollow">详细了解 InnoDB 内存结构及其原理</a></p> </blockquote> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">这一页一页的数据，就存放在 Buffer Pool 中。当 DML 语句（也就是 CRUD）语句对表数据进行了变更之后，数据所在的那一页就会被标记为<strong style="font-weight: bold; line-height: 1.75em; color: rgba(74, 74, 74, 1)">脏页</strong>。</p> <figure data-tool="mdnice编辑器" style="margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center"><img decoding="async" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h10cg8nuxqj20m508l3ym.jpg" alt="MySQL 表数据多久刷一次盘"></figure> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">InnoDB 会用一个叫【Flush 链表】的结构来存放这些脏页，凡是被放进该链表的页都代表需要<strong style="font-weight: bold; line-height: 1.75em; color: rgba(74, 74, 74, 1)">刷入磁盘</strong>，但不是立即刷入。</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">和 InnoDB 的其他日志例如 Redo Log 一样，这些日志都是有自己的<strong style="font-weight: bold; line-height: 1.75em; color: rgba(74, 74, 74, 1)">刷盘策略</strong>。例如 Redo Log，其刷盘策略可以用下图来表示：</p> <figure data-tool="mdnice编辑器" style="margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center"><img decoding="async" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h10cgixvp1j20nw0b4glv.jpg" alt="MySQL 表数据多久刷一次盘"></figure> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">参数为0，Redo Log 会每隔一秒，写入并且刷入磁盘。</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">参数为1，Redo Log 会在每次事务提交之后刷入磁盘</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">参数为2，每次事务提交，都会写到 OS 缓存中去，然后每隔一秒将 OS 缓存中的数据刷入磁盘</p> <figure data-tool="mdnice编辑器" style="margin: 10px 0; display: flex; flex-direction: column; justify-content: center; align-items: center"><img decoding="async" src="https://tva1.sinaimg.cn/large/e6c9d24ely1h10chos280j20ru07i74s.jpg" alt="MySQL 表数据多久刷一次盘"></figure> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">而 Flush 链表也有自己的策略。</p> <h2 data-tool="mdnice编辑器" style="padding: 0; font-weight: bold; color: rgba(0, 0, 0, 1); font-size: 22px; display: block; text-align: center; background-image: url(&quot;https://files.mdnice.com/koala-2.png&quot;); background-position: center; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 50px; margin-top: 1em; margin-bottom: 10px"><span class="prefix" style="display: none"></span><span class="content" style="text-align: center; display: inline-block; height: 38px; line-height: 42px; color: rgba(72, 179, 120, 1); background-position: left; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 63px; margin-top: 38px; font-size: 18px; margin-bottom: 10px">3. 什么时候刷到磁盘</span><span class="suffix"></span></h2> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">接上节，策略就是：<strong style="font-weight: bold; line-height: 1.75em; color: rgba(74, 74, 74, 1)">脏页的数量</strong>达到了 Buffer Pool 中页数量的 **10%**，就会触发将 Flush 链表中的脏页刷入磁盘。举个例子，Buffer Pool 中总共有 100 张页，脏页如果达到了 10 页就会启动后台线程，触发刷盘。</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">当然，【10%】这个数值是可配置的，通过 MySQL 配置项 innodb_max_dirty_pages_pct_lwm 可以进行调整，只是默认值是 10%。但是我们调整的值不能超过某个最大值，这个最大值由 innodb_max_dirty_pages_pct 来指定，默认值为 90%。</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">换句话说，默认情况，刷盘阈值是 10%，如果需要自定义，则最大值不能超过 90%。</p> <h2 data-tool="mdnice编辑器" style="padding: 0; font-weight: bold; color: rgba(0, 0, 0, 1); font-size: 22px; display: block; text-align: center; background-image: url(&quot;https://files.mdnice.com/koala-2.png&quot;); background-position: center; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 50px; margin-top: 1em; margin-bottom: 10px"><span class="prefix" style="display: none"></span><span class="content" style="text-align: center; display: inline-block; height: 38px; line-height: 42px; color: rgba(72, 179, 120, 1); background-position: left; background-repeat: no-repeat; background-attachment: initial; background-origin: initial; background-clip: initial; background-size: 63px; margin-top: 38px; font-size: 18px; margin-bottom: 10px">4. 谁来负责刷盘</span><span class="suffix"></span></h2> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">上个小节已经说过了，会启动线程来专门做这个事情，这个没有什么疑问。我们需要关注的是会启动多少个线程来做这个事。</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">答案是 4 个，我们也可以通过配置项 innodb_page_cleaners  来更改，但一般都不会去改这个值。</p> <p data-tool="mdnice编辑器" style="font-size: 16px; padding-bottom: 8px; margin: 0; padding-top: 1em; color: rgba(74, 74, 74, 1); line-height: 1.75em">关于这个点就聊到这。</p> </section> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-62073.htm">养猫打针需要多少钱一针（养猫打针一共要多少钱）</a></p>
+                                        <p>下一个：<a href="/news/article-62664.htm">养猫咪的人会得什么病（养猫会有病吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-21-free-node-subscribe-links.htm" title="1月21日最新订阅分享 | 19.4M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接">1月21日最新订阅分享 | 19.4M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-clash-v2ray-ss-ssr.htm" title="1月22日最新订阅分享 | 21M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接">1月22日最新订阅分享 | 21M/S|2025年V2ray/Clash/SSR/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-62072.htm" title="成年猫咪打一次疫苗多少钱啊（成年猫咪打疫苗多少钱一针）">成年猫咪打一次疫苗多少钱啊（成年猫咪打疫苗多少钱一针）</a></li>
+                        <li class="py-2"><a href="/news/article-62663.htm" title="MySQL 表数据多久刷一次盘">MySQL 表数据多久刷一次盘</a></li>
+                        <li class="py-2"><a href="/news/article-54112.htm" title="宠物粮食行业发展前景分析报告总结范文（宠物粮行业环境分析）">宠物粮食行业发展前景分析报告总结范文（宠物粮行业环境分析）</a></li>
+                        <li class="py-2"><a href="/news/article-48281.htm" title="JavaScript查找句子的平均单词长度">JavaScript查找句子的平均单词长度</a></li>
+                        <li class="py-2"><a href="/news/article-59157.htm" title="JavaScript根据二维数组构建最大数组方法详解">JavaScript根据二维数组构建最大数组方法详解</a></li>
+                        <li class="py-2"><a href="/news/article-45891.htm" title="动物疫苗龙头企业排行榜最新公布（动物疫苗龙头上市公司）">动物疫苗龙头企业排行榜最新公布（动物疫苗龙头上市公司）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-node-share.htm" title="2月10日最新订阅分享 | 18.2M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接">2月10日最新订阅分享 | 18.2M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-50395.htm" title="宠物粮食市场竞争与效益分析报告（宠物粮食市场份额）">宠物粮食市场竞争与效益分析报告（宠物粮食市场份额）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">75</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
