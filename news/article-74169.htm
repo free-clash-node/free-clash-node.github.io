@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-74169.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>PHP回调/可调用对象详解</title>
+        <meta name="description" content="定义和用法 回调是PHP中的伪类型。在PHP 5.4中，引入了Callable类型提示，类似于Callback。当某个对象被标识为可调用时，意味着它可以用作可调用的函数。可调用对象可以是内置的或用户定" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-74169.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="PHP回调/可调用对象详解" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/ed15cc982fed5e2a654d7659abc3b303.webp" />
+        <meta property="og:release_date" content="2025-03-15T07:19:37" />
+    <meta property="og:updated_time" content="2025-03-15T07:19:37" />
+        <meta property="og:description" content="定义和用法 回调是PHP中的伪类型。在PHP 5.4中，引入了Callable类型提示，类似于Callback。当某个对象被标识为可调用时，意味着它可以用作可调用的函数。可调用对象可以是内置的或用户定" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PHP回调/可调用对象详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>PHP回调/可调用对象详解</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<h2>定义和用法</h2> <p>回调是PHP中的伪类型。在PHP 5.4中，引入了Callable类型提示，类似于Callback。当某个对象被标识为可调用时，意味着它可以用作可调用的函数。可调用对象可以是内置的或用户定义的函数，也可以是任何类内的方法。</p> <p>is_callable()函数可用于验证标识符是否可调用。PHP的call_user_function()接受函数名称作为参数。</p> <p>以下示例显示了一个内置函数是可调用的。</p> <h2>示例</h2> <pre>&lt;?php var_dump&nbsp;(is_callable("abs")); ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>bool(true)</pre> <p>在以下示例中，测试了用户定义的函数是否可调用。</p> <h2>示例</h2> <pre>&lt;?php function&nbsp;myfunction(){ &nbsp;&nbsp;&nbsp;echo&nbsp;"Hello&nbsp;World"; } echo&nbsp;is_callable("myfunction")&nbsp;.&nbsp;"\n"; call_user_func("myfunction") ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>1 Hello&nbsp;World</pre> <p>为了将对象方法作为可调用方法传递，对象本身及其方法作为数组中的两个元素传递</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;function&nbsp;mymethod(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"This&nbsp;is&nbsp;a&nbsp;callable"&nbsp;.&nbsp;"\n"; &nbsp;&nbsp;&nbsp;} } $obj=new&nbsp;myclass(); call_user_func(array($obj,&nbsp;"mymethod")); //array&nbsp;passed&nbsp;in&nbsp;literal&nbsp;form call_user_func([$obj,&nbsp;"mymethod"]); ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>This&nbsp;is&nbsp;a&nbsp;callable This&nbsp;is&nbsp;a&nbsp;callable</pre> <p>类中的静态方法也可以作为可调用方法传递。类的名称应该是数组参数中的第一个元素，而不是对象</p> <h2>示例</h2> <pre>&lt;?php class&nbsp;myclass{ &nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;mymethod(){ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;"This&nbsp;is&nbsp;a&nbsp;callable"&nbsp;.&nbsp;"\n"; &nbsp;&nbsp;&nbsp;} } $obj=new&nbsp;myclass(); call_user_func(array("myclass",&nbsp;"mymethod")); //using&nbsp;scope&nbsp;resolution&nbsp;operator call_user_func("myclass::mymethod"); ?&gt;</pre> <p>输出结果</p> <p>这将产生以下结果-</p> <pre>This&nbsp;is&nbsp;a&nbsp;callable This&nbsp;is&nbsp;a&nbsp;callable</pre> <div></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-73502.htm">开动物医院需要多少资金才能开（开办一间动物医院需要什么资质）</a></p>
+                                        <p>下一个：<a href="/news/article-74170.htm">动物疫苗行业标准最新规定（动物疫苗法规）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-free-clash-subscribe.htm" title="3月9日最新订阅分享 | 22.3M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接">3月9日最新订阅分享 | 22.3M/S|2025年Shadowrocket/SSR/Clash/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-17-free-node-subscribe.htm" title="1月17日最新订阅分享 | 22M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接">1月17日最新订阅分享 | 22M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-45890.htm" title="北京动物咬伤去哪打疫苗（北京动物园咬伤）">北京动物咬伤去哪打疫苗（北京动物园咬伤）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-free-node-subscribe.htm" title="3月2日最新订阅分享 | 22.7M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接">3月2日最新订阅分享 | 22.7M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-70211.htm" title="米乐宠物托运公司（米乐宠物托运公司地址）">米乐宠物托运公司（米乐宠物托运公司地址）</a></li>
+                        <li class="py-2"><a href="/news/article-63874.htm" title="动物疫苗制作流程图解（动物疫苗的种类和制备原理）">动物疫苗制作流程图解（动物疫苗的种类和制备原理）</a></li>
+                        <li class="py-2"><a href="/news/article-70210.htm" title="动物疫苗在哪里买的到呢（动物注射疫苗注射哪里）">动物疫苗在哪里买的到呢（动物注射疫苗注射哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-42408.htm" title="被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）">被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）</a></li>
+                        <li class="py-2"><a href="/news/article-53022.htm" title="宠物用品一件代发网站有哪些品牌（宠物用品一件代发进货渠道）">宠物用品一件代发网站有哪些品牌（宠物用品一件代发进货渠道）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-1-clash-node.htm" title="2月1日最新订阅分享 | 21.9M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接">2月1日最新订阅分享 | 21.9M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
