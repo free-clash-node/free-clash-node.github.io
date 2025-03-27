@@ -121,6 +121,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <h2>前言</h2> <p>&nbsp; &nbsp; &nbsp; &nbsp;最近接手一个项目，是h5多页面，页面中通过cdn的方式引入vant的样式和js。在用到van-swipe-cell时，把官网上的代码搬下来却没任何效果，明明设置了右侧滑动的内容，却也是滑动不了。同样的代码，在我的vue单页面应用项目里，使用是没问题的。</p> <p>代码如下：</p> <pre><code class="language-html">&lt;van-swipe-cell&gt;   &lt;van-cell :border="false" title="单元格" value="内容" /&gt;   &lt;template #right&gt;     &lt;van-button square type="danger" text="删除" /&gt;     &lt;van-button square type="primary" text="收藏" /&gt;   &lt;/template&gt; &lt;/van-swipe-cell&gt;</code></pre> <h2>分析</h2> <p>查了一天，终于找到一位网友说的关键点，通过cdn方式引入，格式需要严格要求，标签必须成对出现，比如：</p> <pre><code class="language-html">&lt;!--正确--&gt; &lt;van-button&gt;xxx&lt;/van-button&gt;   &lt;!--错误--&gt; &lt;van-button /&gt;</code></pre> <p>把上面有格式问题的代码，全部修改完后，发现还是滑动不了。又回去看官网的介绍，右侧滑动的内容是通过slot引入到页面中的，如下：</p> <p><img fetchpriority="high" decoding="async" alt="" height="193" src="http://img.555519.xyz/uploads3/20220607/54d8c608cfad7b36d1b021734a8ac8dc.jpg"></p> <p>于是想起自己写组件时候，引入插槽的方法，果断把#换成slot字样，解决了！！！</p> <h2>总结</h2> <p>如果通过cdn的方式引入vant，使用它的插件的时候，需要注意两点：</p> <p>1.插件里的标签必须成对出现，不能这样结尾&nbsp;&lt;单标签/&gt;</p> <p>2.左侧/右侧 滑动显示的内容，要使用slot="left/right"标识，而不能直接用#</p> <p>示例</p> <pre><code class="language-html">&lt;van-swipe-cell&gt;   &lt;van-cell :border="false" title="单元格" value="内容"&gt;&lt;/van-cell&gt;   &lt;template slot="right"&gt;     &lt;van-button square type="danger" text="删除"&gt;&lt;/van-button&gt;     &lt;van-button square type="primary" text="收藏"&gt;&lt;/van-button&gt;   &lt;/template&gt; &lt;/van-swipe-cell&gt;</code></pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-80275.htm">DeferredResult异步处理spring mvc Demo</a></p>
+                                        <p>下一个：<a href="/news/article-80998.htm">妙三多疫苗说明书（妙三多疫苗使用说明）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -130,16 +131,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-1-18-free-clash-subscribe.htm" title="1月18日最新订阅分享 | 18M/S|2025年V2ray/Shadowrocket/SSR/Clash免费节点地址链接">1月18日最新订阅分享 | 18M/S|2025年V2ray/Shadowrocket/SSR/Clash免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/news/article-53557.htm" title="动物疫苗多长时间内打一次 动物疫苗多长时间内打一次最好">动物疫苗多长时间内打一次 动物疫苗多长时间内打一次最好</a></li>
-                        <li class="py-2"><a href="/news/article-60300.htm" title="符合动物医院法定条件是什么意思呀（政府动物医院）">符合动物医院法定条件是什么意思呀（政府动物医院）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-high-speed-nodes.htm" title="3月10日最新订阅分享 | 19.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接">3月10日最新订阅分享 | 19.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-1-31-free-high-speed-nodes.htm" title="1月31日最新订阅分享 | 20.6M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接">1月31日最新订阅分享 | 20.6M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/news/article-59731.htm" title="动物打疫苗去哪里 动物打疫苗去哪里打">动物打疫苗去哪里 动物打疫苗去哪里打</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-24-clash-v2ray-ss-ssr.htm" title="3月24日最新订阅分享 | 22.8M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接">3月24日最新订阅分享 | 22.8M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-2-2-free-high-speed-nodes.htm" title="2月2日最新订阅分享 | 22.4M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接">2月2日最新订阅分享 | 22.4M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/news/article-54112.htm" title="宠物粮食行业发展前景分析报告总结范文（宠物粮行业环境分析）">宠物粮食行业发展前景分析报告总结范文（宠物粮行业环境分析）</a></li>
-                        <li class="py-2"><a href="/news/article-51969.htm" title="中国动物疫苗市场分析图（中国动物疫苗公司排名）">中国动物疫苗市场分析图（中国动物疫苗公司排名）</a></li>
+                        <li class="py-2"><a href="/news/article-46368.htm" title="猫轻微抓伤需要***吗（宠物猫轻微抓伤需要***吗）">猫轻微抓伤需要***吗（宠物猫轻微抓伤需要***吗）</a></li>
+                        <li class="py-2"><a href="/news/article-46369.htm" title="宠物粮品牌排行榜前十名有哪些牌子（宠物净化器品牌排行榜前十名）">宠物粮品牌排行榜前十名有哪些牌子（宠物净化器品牌排行榜前十名）</a></li>
+                        <li class="py-2"><a href="/news/article-58018.htm" title="打过疫苗的健康狗会传染狂犬病毒吗（打过疫苗的狗还会被传染犬瘟吗）">打过疫苗的健康狗会传染狂犬病毒吗（打过疫苗的狗还会被传染犬瘟吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-clash-node-github.htm" title="2月8日最新订阅分享 | 19.4M/S|2025年Shadowrocket/Clash/SSR/V2ray免费节点地址链接">2月8日最新订阅分享 | 19.4M/S|2025年Shadowrocket/Clash/SSR/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-38285.htm" title="成人怎么学兽医（没基础的成人想学兽医如何开始）">成人怎么学兽医（没基础的成人想学兽医如何开始）</a></li>
+                        <li class="py-2"><a href="/news/article-80999.htm" title="猫咪全套疫苗打下来要多少钱一针疫苗（猫咪疫苗要打几针多少钱）">猫咪全套疫苗打下来要多少钱一针疫苗（猫咪疫苗要打几针多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-78933.htm" title="动物医院申请条件及流程怎么写的啊图片（动物医院诊疗许可证办理）">动物医院申请条件及流程怎么写的啊图片（动物医院诊疗许可证办理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-10-node-share.htm" title="2月10日最新订阅分享 | 18.2M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接">2月10日最新订阅分享 | 18.2M/S|2025年Shadowrocket/V2ray/Clash/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe.htm" title="3月25日最新订阅分享 | 20.7M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接">3月25日最新订阅分享 | 20.7M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-free-ssr-subscribe.htm" title="1月27日最新订阅分享 | 18.4M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接">1月27日最新订阅分享 | 18.4M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接</a></li>
                     </ul>
     </div>
 </div>
@@ -151,7 +152,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">72</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
