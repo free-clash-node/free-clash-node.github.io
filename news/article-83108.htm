@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-83108.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Azure DevOps通过SSH部署上传到服务器的应用</title>
+        <meta name="description" content="上一篇中，我们实现了通过FTP把流水线编译出来的制品上传到我们的公网服务器上，这一篇我们来研究一下通过azure的ssh连接到服务器 把应用在服务器上运行起来。 首先，我们书接上文，在release流" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-83108.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="Azure DevOps通过SSH部署上传到服务器的应用" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/759ad47ff51ee75d8fe0d2ea6d101322.webp" />
+        <meta property="og:release_date" content="2025-03-28T09:53:41" />
+    <meta property="og:updated_time" content="2025-03-28T09:53:41" />
+        <meta property="og:description" content="上一篇中，我们实现了通过FTP把流水线编译出来的制品上传到我们的公网服务器上，这一篇我们来研究一下通过azure的ssh连接到服务器 把应用在服务器上运行起来。 首先，我们书接上文，在release流" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Azure DevOps通过SSH部署上传到服务器的应用">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>Azure DevOps通过SSH部署上传到服务器的应用</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<p>上一篇中，我们实现了通过FTP把流水线编译出来的制品上传到我们的公网服务器上，这一篇我们来研究一下通过azure的ssh连接到服务器</p> <p>把应用在服务器上运行起来。</p> <p>首先，我们书接上文，在release流水线的agent中添加第三个task，我们在右侧搜索ssh，点击添加。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/6d941f6483cd00ea822c7064c015ec38.jpg" alt="Azure DevOps通过SSH部署上传到服务器的应用"></p> <p>&nbsp;添加完成之后，需要我们去维护一个ssh的连接信息，我们点击Manage会跳转到azure的服务连接管理界面，在这里我们添加一个ssh的信息。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/b530b207e4eed85581049de66a74b132.jpg" alt="Azure DevOps通过SSH部署上传到服务器的应用"></p> <p>下拉到ssh，点击下一步,填入SSH的信息，主要要在勾选一下下面的单选框，让所有流水线都可以访问到这个凭证。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/edd1ae28c27e4862491a28106e904133.jpg" alt="Azure DevOps通过SSH部署上传到服务器的应用"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/448a9286f601de2ca439960cc58394a5.jpg" alt="Azure DevOps通过SSH部署上传到服务器的应用"></p> <p>然后返回我们流水线的SSH界面，刷新选择我们新创建的凭证，选择inline scripts选项，编写脚本，在编写脚本之前我们需要准备一些东西</p> <p>1.守护进程的文件</p> <p>2.nginx的反向代理文件</p> <p>当然也可以不进行反向代理，直接暴露服务也是没问题的，测试环境无所谓，生产上肯定是要包一下反向代理的，所以我们按生产的来。</p> <p>守护进程文件内容我这里写了一个简单的</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 0, 1)">[Unit] Description</span>=<span style="color: rgba(0, 0, 0, 1)">Example java App running on centos  [Service] WorkingDirectory</span>=/home/<span style="color: rgba(0, 0, 0, 1)">ftp ExecStart</span>=/usr/bin/java -jar /home/ftp/demo-<span style="color: rgba(0, 0, 0, 1)">app.jar Restart</span>=<span style="color: rgba(0, 0, 0, 1)">always # Restart service after</span><span style="color: rgba(128, 0, 128, 1)">10</span> seconds<span style="color: rgba(0, 0, 255, 1)">if</span><span style="color: rgba(0, 0, 0, 1)"> the dotnet service crashes: RestartSec</span>=<span style="color: rgba(128, 0, 128, 1)">10</span><span style="color: rgba(0, 0, 0, 1)"> KillSignal</span>=<span style="color: rgba(0, 0, 0, 1)">SIGINT SyslogIdentifier</span>=dotnet-<span style="color: rgba(0, 0, 0, 1)">example User</span>=<span style="color: rgba(0, 0, 0, 1)">root  [Install] WantedBy</span>=multi-user.target</pre> </div> <p>nginx反向代理节点把80代理到1433：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 0, 1)">server {     listen</span><span style="color: rgba(128, 0, 128, 1)">80</span><span style="color: rgba(0, 0, 0, 1)">;     location</span>/<span style="color: rgba(0, 0, 0, 1)"> {         proxy_pass         http:</span><span style="color: rgba(0, 128, 0, 1)">//</span><span style="color: rgba(0, 128, 0, 1)">localhost:1433;</span>         proxy_http_version<span style="color: rgba(128, 0, 128, 1)">1.1</span><span style="color: rgba(0, 0, 0, 1)">;         proxy_set_header   Upgrade $http_upgrade;         proxy_set_header   Connection keep</span>-<span style="color: rgba(0, 0, 0, 1)">alive;         proxy_set_header   Host $host;         proxy_cache_bypass $http_upgrade;         proxy_set_header   X</span>-Forwarded-<span style="color: rgba(0, 0, 0, 1)">For $proxy_add_x_forwarded_for;         proxy_set_header   X</span>-Forwarded-<span style="color: rgba(0, 0, 0, 1)">Proto $scheme;     } }</span></pre> </div> <p>&nbsp;然后我们需要在服务器上线先手动把守护进程和反向代理配置好，这样日后流水线发布的时候只需要重启一下守护进程应用就自动重启了。</p> <p>接下来我们在bash中输入重启守护进程的命令，用于每次流水线执行完后重启应用。</p> <div class="cnblogs_code"> <pre>cd /home/ftp/<span style="color: rgba(0, 0, 0, 1)">app tar</span>-<span style="color: rgba(0, 0, 0, 1)">xvf demo.tar.gz systemctl start demo</span></pre> </div> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/da70ae9c3efec0b18bd1ea5300771327.jpg" alt="Azure DevOps通过SSH部署上传到服务器的应用"></p> <p>然后我们运行一下流水线看看效果，运行成功，没有报错。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/5941c9f3972f7b2b9579e3e2eceb36fe.jpg" alt="Azure DevOps通过SSH部署上传到服务器的应用"></p> <p>&nbsp;我们上服务器看一下应用程序，守护进程重启成功，程序正常运行。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/72539467a91eff71ef24079fb57678d4.jpg" alt="Azure DevOps通过SSH部署上传到服务器的应用"></p> <p>&nbsp;到这里，我们通过流水线完成了从代码构建-》制品上传到服务器-》重启应用的整套流程，但是这只是一个非常简单的demo,并不符合我们生产时真正的要求，接下来我们会继续对流水线进行改造。</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-82383.htm">暂时领养宠物 暂时领养宠物违法吗</a></p>
+                                        <p>下一个：<a href="/news/article-83109.htm">动物疫苗价格表图片高清大全集 动物疫苗价格表图片高清大全集下载</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-43904.htm" title="南京无偿领养宠物猫吧地址（南京领养猫咪）">南京无偿领养宠物猫吧地址（南京领养猫咪）</a></li>
+                        <li class="py-2"><a href="/news/article-77544.htm" title="宠物美容师底薪一般多少（宠物美容师工资是多少）">宠物美容师底薪一般多少（宠物美容师工资是多少）</a></li>
+                        <li class="py-2"><a href="/news/article-65725.htm" title="农大宠物医院地址电话（农大宠物医院地址电话是多少）">农大宠物医院地址电话（农大宠物医院地址电话是多少）</a></li>
+                        <li class="py-2"><a href="/news/article-72165.htm" title="58同城免费领养猫猫送到家 58同城免费领养猫猫送到家吗安全吗">58同城免费领养猫猫送到家 58同城免费领养猫猫送到家吗安全吗</a></li>
+                        <li class="py-2"><a href="/news/article-54657.htm" title="动物疫苗注射方法视频教程 动物疫苗注射方法视频教程全集">动物疫苗注射方法视频教程 动物疫苗注射方法视频教程全集</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-free-high-speed-nodes.htm" title="2月2日最新订阅分享 | 22.4M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接">2月2日最新订阅分享 | 22.4M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-63260.htm" title="Vue简单实现自定义拖拽">Vue简单实现自定义拖拽</a></li>
+                        <li class="py-2"><a href="/news/article-44402.htm" title="养猫的人,都容易得哪些“猫病”?（养猫的人容易得什么病?）">养猫的人,都容易得哪些“猫病”?（养猫的人容易得什么病?）</a></li>
+                        <li class="py-2"><a href="/news/article-70849.htm" title="Typescript的三种运行方式">Typescript的三种运行方式</a></li>
+                        <li class="py-2"><a href="/news/article-39941.htm" title="C++内存泄漏的定位方法总结">C++内存泄漏的定位方法总结</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                            <p>
+                                <a href="/">首页</a> |
+                                <a href="/free-node/">免费节点</a> |
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
