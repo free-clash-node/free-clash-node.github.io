@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-94236.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>C++入门   面向对象的基础</title>
+        <meta name="description" content="C++是一门面向对象的语言，在C语言的基础上有了进一步的扩充与完善。   1、面向对象的特征：  封装：封装是一个用来将对象的状态和行为捆绑到一个单一逻辑单元机制的正式术语。不是面向对象语言所特有，在" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-94236.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="C++入门   面向对象的基础" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/9d3413943775b9922ad7edf7574e664c.webp" />
+        <meta property="og:release_date" content="2025-04-12T08:57:58" />
+    <meta property="og:updated_time" content="2025-04-12T08:57:58" />
+        <meta property="og:description" content="C++是一门面向对象的语言，在C语言的基础上有了进一步的扩充与完善。   1、面向对象的特征：  封装：封装是一个用来将对象的状态和行为捆绑到一个单一逻辑单元机制的正式术语。不是面向对象语言所特有，在" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C++入门   面向对象的基础">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>C++入门   面向对象的基础</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>C++是一门面向对象的语言，在C语言的基础上有了进一步的扩充与完善。</p> <div>  <strong>1、面向对象的特征：</strong> </div> <p><strong>封装：</strong>封装是一个用来将对象的状态和行为捆绑到一个单一逻辑单元机制的正式术语。不是面向对象语言所特有，在面向过程的C语言中用结构封装了数据，函数封装了逻辑。但是面向对象封装了数据和逻辑，一定意义上面向对象的封装更加完美。</p> <div>  <strong>继承：</strong>继承是定义新类的一种机制，使用这种机制创建新类时只需要声明新类和已创建类之间的差别，对于一个特定的继承关系，将新类称为子类或者派生类，被继承的类成为父类或者基类。 </div> <div>  <strong>多态：</strong>指属于两个或多个不同类的对象以各自类相关的不同方式响应同一消息的能力。多态使得消息发送者能给一组具有公共接口的对象发送相同的消息，接收者做出相应的回应。 </div> <div>  <strong>2、C++的类</strong><br />   </div> <div>  类的标准形式： </div> <div>  class &lt;类名&gt; </div> <div>  { </div> <div>  &nbsp; &nbsp; private： </div> <div>  &nbsp; &nbsp; &nbsp; &nbsp; 私有数据和成员函数 </div> <div>  &nbsp; &nbsp; public： </div> <div>  &nbsp; &nbsp; &nbsp; &nbsp; 公有数据和成员函数 </div> <div>  &nbsp; &nbsp; protected： </div> <div>  &nbsp; &nbsp; &nbsp; &nbsp; 保护数据和成员函数 </div> <div>  } </div> <div>  private（私有属性）：说明类的成员是私有的，可以被该类的成员函数访问，但类变量不能直接访问； </div> <div>  public （公有属性）：说明类的成员是公有的，可以被该类的成员函数和类变量访问； </div> <div>  protected（保护属性）：说明该类的成员是被保护的，可以被该类的成员函数和派生类访问，不能被类变量访问。 </div> <div>  <strong>3、this指针分析</strong> </div> <div>  <strong>&nbsp; &nbsp; </strong>this指针在类的每个成员函数中都存在，只是没有显示。this指针是通过函数参数的首参数来传递的，在成员函数开始执行前构造好，在成员函数执行结束后释放。 </div> <div>  <strong>4、构造函数和析构函数</strong> &nbsp; &nbsp; </div> <div>  <strong> 构造函数：</strong>对象被创建时，系统自动调用构造函数，构造函数是类中一种特殊的函数成员，用来在创建对象时初始化对象的数据成员。构造函数的函数名和类名相同，无返回值。<br />  <u><em>如果类中没有定义构造函数，编译器会提供一个默认构造函数，无返回值，无参数，函数体为空。但如果类中定义了构造函数，编译器就不再提供默认的构造函数。</em></u> </div> <div>  <strong>析构函数：</strong>作用和构造函数相反，用于释放资源。当一个对象的生命周期结束前或者被delete（堆对象）时，编译器自动调用其析构函数。<br />  <em><u>如果类中没有定义析构函数，编译器会提供一个默认析构函数，但默认析构函数不会释放动态分配的资源。</u></em> </div> <div>  析构函数形式：<br />  <strong><span style="background-color:rgb(255,255,255);">~类名（）{ &nbsp;&nbsp; }</span></strong> </div> <div>  <strong>类应用举例：随机生成一个数组</strong> </div> <pre><code class="language-cpp"><del><em> </em></del></code></pre> <p></p> <pre><code class="language-cpp"></code></pre> <div>  <code class="language-cpp">#ifndef _ARRAY_H #define _ARRAY_H class Array { private: int *m_data; </code> </div> <div>  <code class="language-cpp"> int m_length; void SetLength(int l); void InitArray(); void SetValue(int index, int val); int GetLength(); int GetValue(int index); }; #endif </code> </div> <p><code class="language-cpp"><br /></code></p> <pre class="cpp"><code class="language-cpp">#include "Array.h" #include &lt;iostream&gt; #include &lt;cstdlib&gt;  using namespace std;  void Array::SetLength(int l) { 	m_length = l; }  void Array::InitArray() { 	if (m_length &lt; 0) 	{ 		m_length = 0; 	}  	m_data = (int *)malloc(sizeof(int) * m_length); 	if (NULL == m_data) 	{ 		cout &lt;&lt; "malloc failure!" &lt;&lt; endl; 	} }  void Array::SetValue(int index, int val) { 	m_data[index] = val; }  int Array::GetLength() { 	return m_length; }  int Array::GetValue(int index) { 	return m_data[index]; } </code></pre> <pre><code class="language-cpp">#include "Array.h" #include &lt;iostream&gt;  using namespace std;  int main() { 	int length, i; 	Array a, b;  	cout &lt;&lt; "Please input " &lt;&lt; endl; 	cin &gt;&gt; length;  	a.SetLength(length); 	a.InitArray();  	for (i = 0; i &lt; a.GetLength(); i++) 	{ 		a.SetValue(i, i + 1); 	}  	for (int j = 0; j &lt; a.GetLength(); j++) 	{ 		cout &lt;&lt; a.GetValue(j) &lt;&lt; endl; 	}  	return 0; } </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-93272.htm">长沙宠物领养救助站在哪里办理（长沙宠物救助站领养宠物）</a></p>
+                                        <p>下一个：<a href="/news/article-94237.htm">宠物粮食怎么销售出去 宠物粮食怎么销售出去的</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-clash-node-github.htm" title="4月5日最新订阅分享 | 22.1M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接">4月5日最新订阅分享 | 22.1M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-83108.htm" title="Azure DevOps通过SSH部署上传到服务器的应用">Azure DevOps通过SSH部署上传到服务器的应用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-free-node-subscribe-links.htm" title="4月9日最新订阅分享 | 22.3M/S|2025年SSR/V2ray/Shadowrocket/Clash免费节点地址链接">4月9日最新订阅分享 | 22.3M/S|2025年SSR/V2ray/Shadowrocket/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-10-clash-v2ray-ss-ssr.htm" title="4月10日最新订阅分享 | 18.1M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接">4月10日最新订阅分享 | 18.1M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-65725.htm" title="农大宠物医院地址电话（农大宠物医院地址电话是多少）">农大宠物医院地址电话（农大宠物医院地址电话是多少）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-free-node-subscribe.htm" title="3月2日最新订阅分享 | 22.7M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接">3月2日最新订阅分享 | 22.7M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-free-high-speed-nodes.htm" title="3月17日最新订阅分享 | 19.8M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接">3月17日最新订阅分享 | 19.8M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-90335.htm" title="小型饲料颗粒机原理动态图片大全（小型饲料颗粒机工作原理）">小型饲料颗粒机原理动态图片大全（小型饲料颗粒机工作原理）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe.htm" title="3月25日最新订阅分享 | 20.7M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接">3月25日最新订阅分享 | 20.7M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-2-free-subscribe-node.htm" title="4月2日最新订阅分享 | 19.4M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接">4月2日最新订阅分享 | 19.4M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">36</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

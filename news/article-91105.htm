@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-91105.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>C语言简明清晰讲解结构体_C 语言</title>
+        <meta name="description" content="目录  本质 简单使用 一些写法 我套我自己 内存对齐  举例-int char char 举例-char int char 举例-char char int  由结构体指针访问成员     本质 一" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-91105.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="C语言简明清晰讲解结构体_C 语言" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/3ae5172706c244f95fc349b751fb7edc.webp" />
+        <meta property="og:release_date" content="2025-04-08T09:54:08" />
+    <meta property="og:updated_time" content="2025-04-08T09:54:08" />
+        <meta property="og:description" content="目录  本质 简单使用 一些写法 我套我自己 内存对齐  举例-int char char 举例-char int char 举例-char char int  由结构体指针访问成员     本质 一" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="C语言简明清晰讲解结构体_C 语言">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>C语言简明清晰讲解结构体_C 语言</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">本质</a></li> <li><a href="#_label1" rel="nofollow">简单使用</a></li> <li><a href="#_label2" rel="nofollow">一些写法</a></li> <li><a href="#_label3" rel="nofollow">我套我自己</a></li> <li><a href="#_label4" rel="nofollow">内存对齐</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_4_0" rel="nofollow">举例-int char char</a></li> <li><a href="#_lab2_4_1" rel="nofollow">举例-char int char</a></li> <li><a href="#_lab2_4_2" rel="nofollow">举例-char char int</a></li> </ul> <li><a href="#_label5" rel="nofollow">由结构体指针访问成员</a></li> <ul class="second_class_ul"></ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>本质</h2> <p>一些值的集合。</p> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>简单使用</h2> <div class="ay1code"> <pre class="brush:cpp;">#include &lt;stdio.h&gt;  struct User {  	char uName[20];  	char uPass[20];  };  int main() {  	struct User u1 = {  		"abc","123"  	};  	printf("%s\n", u1.uName);  	printf("%s\n", u1.uPass);  	return 0;  }  </pre> </div> <p>效果：</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/52628d36a902bcbb6f3f76c517bd52ac.jpg"></p> <p class="maodian"><a name="_label2" rel="nofollow"></a></p> <h2>一些写法</h2> <p>声明之后，可以立即创建实例。</p> <p>也可以单独声明。</p> <div class="ay1code"> <pre class="brush:cpp;">#include &lt;stdio.h&gt;  struct User {  	char uName[20];  	char uPass[20];  } u1, u2, u3;  struct User u4;  int main() {  	struct User u5;  	return 0;  }  </pre> </div> <p>匿名结构体：我用了，你们别想再用。</p> <div class="ay1code"> <pre class="brush:cpp;">struct {  	char uName[20];  	char uPass[20];  }x;  </pre> </div> <p class="maodian"><a name="_label3" rel="nofollow"></a></p> <h2>我套我自己</h2> <p>只能套指针，因为空间有限。</p> <p>举例：链表。</p> <div class="ay1code"> <pre class="brush:cpp;">#include &lt;stdio.h&gt;  struct Node {  	int val;  	struct Node* next;  };  int main() {  	struct Node a = { 333,NULL };  	struct Node b = { 666,&amp;a };  	printf("%d\n", (*b.next).val);  	return 0;  }  </pre> </div> <p>效果：</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/9aef153b7b8cc8286a47cb65d7a803ae.jpg"></p> <p class="maodian"><a name="_label4" rel="nofollow"></a></p> <h2>内存对齐</h2> <p>结构体放成员，是一个一个放的。</p> <p>第一个放到首个地址处。</p> <p>第二个开始，计算一个对齐数，该数是以下两个值的较小者：</p> <p>1，VS的默认值，8。</p> <p>2，该成员所占字节数。</p> <p>实际的偏移量是对齐数的整数倍。</p> <p>最后，结构体的大小是最大对齐数的整数倍。</p> <p class="maodian"><a name="_lab2_4_0" rel="nofollow"></a></p> <h3>举例-int char char</h3> <div class="ay1code"> <pre class="brush:cpp;">#include &lt;stdio.h&gt;  struct A {  	int a;  	char b;  	char c;  };  int main() {  	struct A a = { 1,1,1 };  	printf("%lld", sizeof(a));  	return 0;  }  </pre> </div> <blockquote> <p>效果：8</p> </blockquote> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/15f1b0e61b5769a3f4321d460bd42603.jpg"></p> <p>图解：</p> <p>int放在首位。</p> <p>char占1字节，直接放。</p> <p>第二个char也是。</p> <p>最后长度，按int的字节数的整数倍，也就是8。</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/7bccc246a40cf2720218f7fe205f25f3.jpg"></p> <p class="maodian"><a name="_lab2_4_1" rel="nofollow"></a></p> <h3>举例-char int char</h3> <div class="ay1code"> <pre class="brush:cpp;">#include &lt;stdio.h&gt;  struct A {  	char b;  	int a;  	char c;  };  int main() {  	struct A a = { 1,1,1 };  	printf("%lld", sizeof(a));  	return 0;  }</pre> </div> <blockquote> <p>效果：12</p> </blockquote> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/fdb37c65d658de768ceb42e87ba8761e.jpg"></p> <p>图解：</p> <p>char直接放。</p> <p>int从第四个开始放。</p> <p>char直接放。</p> <p>最后长度：从9开始第一个4的倍数，12。</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/890c0531ab122c7eab83ea60b0edbe4c.jpg"></p> <p class="maodian"><a name="_lab2_4_2" rel="nofollow"></a></p> <h3>举例-char char int</h3> <div class="ay1code"> <pre class="brush:cpp;">#include &lt;stdio.h&gt;  struct A {  	char b;  	char c;  	int a;  };  int main() {  	struct A a = { 1,1,1 };  	printf("%lld", sizeof(a));  	return 0;  }  </pre> </div> <blockquote> <p>效果：8</p> </blockquote> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/7613c8ac190c8911f02ea2adb21f7428.jpg"></p> <p>图解：两个char直接放。</p> <p>int从下一个4的整数倍，也就是第五个开始放。</p> <p>最后长度：从8开始第一个4的倍数，8。</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/6d04a6b5067b426d0628600031cdbec2.jpg"></p> <p class="maodian"><a name="_label5" rel="nofollow"></a></p> <h2>由结构体指针访问成员</h2> <p>就是一种箭头的写法。</p> <div class="ay1code"> <pre class="brush:cpp;">#include &lt;stdio.h&gt;  struct A {  	int a;  };  int main() {  	struct A a = { 333 };  	struct A* b = &amp;a;  	printf("%d\n", b-&gt;a);  	return 0;  }  </pre> </div> <p>效果：</p> <p style="text-align:center"><img decoding="async" alt="在这里插入图片描述" src="http://img.555519.xyz/uploads3/20220504/e030d9f00ea4c7cc908a930bddd6cf84.jpg"></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-90335.htm">小型饲料颗粒机原理动态图片大全（小型饲料颗粒机工作原理）</a></p>
+                                        <p>下一个：<a href="/news/article-91106.htm">动物疫苗多少钱一支啊图片高清大全集（动物疫苗新规）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-clash-v2ray-ss-ssr.htm" title="3月24日最新订阅分享 | 22.8M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接">3月24日最新订阅分享 | 22.8M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-78234.htm" title="动物疫苗法律法规有哪些要求（动物疫苗管理制度）">动物疫苗法律法规有哪些要求（动物疫苗管理制度）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="3月20日最新订阅分享 | 22.4M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接">3月20日最新订阅分享 | 22.4M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-13-free-ssr-subscribe.htm" title="3月13日最新订阅分享 | 22.6M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接">3月13日最新订阅分享 | 22.6M/S|2025年Clash/V2ray/Shadowrocket/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-85238.htm" title="狗粮制作机器设备小型 狗粮制作机器设备小型图片">狗粮制作机器设备小型 狗粮制作机器设备小型图片</a></li>
+                        <li class="py-2"><a href="/news/article-83109.htm" title="动物疫苗价格表图片高清大全集 动物疫苗价格表图片高清大全集下载">动物疫苗价格表图片高清大全集 动物疫苗价格表图片高清大全集下载</a></li>
+                        <li class="py-2"><a href="/news/article-65724.htm" title="动物疫苗分几种种类 动物疫苗分几种种类图片">动物疫苗分几种种类 动物疫苗分几种种类图片</a></li>
+                        <li class="py-2"><a href="/news/article-80275.htm" title="DeferredResult异步处理spring mvc Demo">DeferredResult异步处理spring mvc Demo</a></li>
+                        <li class="py-2"><a href="/news/article-85951.htm" title="什么可以寄宠物狗（什么快递可以寄宠物狗）">什么可以寄宠物狗（什么快递可以寄宠物狗）</a></li>
+                        <li class="py-2"><a href="/news/article-72165.htm" title="58同城免费领养猫猫送到家 58同城免费领养猫猫送到家吗安全吗">58同城免费领养猫猫送到家 58同城免费领养猫猫送到家吗安全吗</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

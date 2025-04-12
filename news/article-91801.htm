@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-91801.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】</title>
+        <meta name="description" content="当开发完前端工程后，执行npm run build进行打包 npm run build 默认会生成dist文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件 进入dist文件夹&nbsp; 复" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-91801.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/36517208087d0c7d1be8ff346b7d5521.webp" />
+        <meta property="og:release_date" content="2025-04-09T09:16:45" />
+    <meta property="og:updated_time" content="2025-04-09T09:16:45" />
+        <meta property="og:description" content="当开发完前端工程后，执行npm run build进行打包 npm run build 默认会生成dist文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件 进入dist文件夹&nbsp; 复" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p>当开发完前端工程后，执行<span style="color:#956fe7;"><strong>npm run build</strong></span>进行打包</p> <pre><code>npm run build</code></pre> <p>默认会生成<span style="color:#956fe7;"><strong>dist</strong></span>文件夹&nbsp; 里面包含了整个前端项目处理后的静态文件</p> <p>进入<span style="color:#956fe7;"><strong>dist</strong></span>文件夹&nbsp; 复制里面的所有文件</p> <p>进入到<span style="color:#956fe7;"><strong>springboot</strong></span>项目中</p> <p>在<span style="color:#956fe7;"><strong>resources</strong></span>目录下新建<strong><span style="color:#956fe7;">static</span></strong>文件夹</p> <p>将刚才从<strong><span style="color:#956fe7;">dist</span></strong>复制的文件粘贴到<span style="color:#956fe7;"><strong>static</strong></span>里面</p> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220603/35e5fab543f17c2cf7a66e29f8da5203.jpg"></p> <p>&nbsp;这个时候就整合到一块了</p> <p>此时<span style="color:#956fe7;"><strong>index.html</strong></span>默认引入的静态资源路径可能会有虚线警告</p> <p>无视它就行了，因为这个路径是没问题的</p> <p>然后运行<span style="color:#956fe7;"><strong>springboot</strong></span>项目<strong><span style="color:#956fe7;">shift+F10</span></strong></p> <p>访问后端启动地址就能访问到项目了</p> <hr/> <p>最终开发完毕后要上传到服务器时</p> <p>先将此<span style="color:#956fe7;"><strong>maven</strong></span>项目打包</p> <p>如图所示</p> <p>点击执行<strong><span style="color:#956fe7;">mvn package</span></strong>就会打包了</p> <pre><code>mvn package</code></pre> <p style="text-align:center;"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220603/b7f67cbdeca9d5bb3290b345e4342960.jpg"></p> <p>&nbsp;打包完毕后会在项目目录中生成一个<strong><span style="color:#956fe7;">target</span></strong>文件夹</p> <p>里面有一个<strong><span style="color:#956fe7;">.jar</span></strong>结尾的文件包就是目标产物</p> <p>还有一个<strong><span style="color:#956fe7;">.jar.original</span></strong>用不到&nbsp; 请无视它</p> <hr/> <p>将<strong><span style="color:#956fe7;">.jar</span></strong>结尾的文件通过XFTP上传到服务器根目录（<strong><span style="color:#956fe7;">/root</span></strong>）下</p> <p><span style="color:#a5a5a5;"><em>如何使用Xshell XFTP 请看我的另一篇文章，安装JDK、nginx、mysql的那篇文章</em></span></p> <p><img fetchpriority="high" decoding="async" alt="" height="201" src="http://img.555519.xyz/uploads3/20220603/848c4749c687b49e76f06d45ed161f96.jpg"></p> <p>&nbsp;然后在<span style="color:#956fe7;"><strong>linux</strong></span>命令行执行命令运行<span style="color:#956fe7;"><strong>jar</strong></span>文件</p> <p><strong><span style="color:#956fe7;">***</span></strong>就是你自己的<span style="color:#956fe7;"><strong>jar</strong></span>文件名</p> <pre><code>java -jar ***.jar</code></pre> <p>执行这句代码让程序一直在后端运行</p> <p>这样即使关闭<span style="color:#956fe7;"><strong>xshell</strong></span>连接也能访问到项目</p> <pre><code>nohup java -jar  ***.jar  &amp;</code></pre> <p>然后输入公网IP+端口就能访问了</p> <p>如果这边文章对你有那么一点点帮助，请点个赞再走，这会对我很有帮助！</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-91106.htm">动物疫苗多少钱一支啊图片高清大全集（动物疫苗新规）</a></p>
+                                        <p>下一个：<a href="/news/article-91802.htm">被猫抓怎么判断有没有破皮呢（被猫抓如何判断破皮没）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-72166.htm" title="动物疫苗研究所 动物疫苗研究所官网">动物疫苗研究所 动物疫苗研究所官网</a></li>
+                        <li class="py-2"><a href="/news/article-91801.htm" title="vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】">vue打包后整合到springboot项目、并打包成jar上传到Linux服务器运行【前后端分离开发、整体部署到Linux服务器】</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-clash-node-github.htm" title="4月3日最新订阅分享 | 19.2M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接">4月3日最新订阅分享 | 19.2M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-8-node-share-links.htm" title="4月8日最新订阅分享 | 22.9M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接">4月8日最新订阅分享 | 22.9M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-72165.htm" title="58同城免费领养猫猫送到家 58同城免费领养猫猫送到家吗安全吗">58同城免费领养猫猫送到家 58同城免费领养猫猫送到家吗安全吗</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-free-clash.htm" title="3月31日最新订阅分享 | 19.1M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接">3月31日最新订阅分享 | 19.1M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-87388.htm" title="宠物领养证如何办理的 宠物领养证如何办理的呢">宠物领养证如何办理的 宠物领养证如何办理的呢</a></li>
+                        <li class="py-2"><a href="/news/article-78933.htm" title="动物医院申请条件及流程怎么写的啊图片（动物医院诊疗许可证办理）">动物医院申请条件及流程怎么写的啊图片（动物医院诊疗许可证办理）</a></li>
+                        <li class="py-2"><a href="/news/article-76196.htm" title="动物疫苗上市企业有哪些品牌 动物疫苗上市企业有哪些品牌的">动物疫苗上市企业有哪些品牌 动物疫苗上市企业有哪些品牌的</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-node-subscribe-links.htm" title="3月4日最新订阅分享 | 22.2M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接">3月4日最新订阅分享 | 22.2M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">33</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
