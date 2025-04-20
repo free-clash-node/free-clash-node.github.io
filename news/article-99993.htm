@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-99993.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）</title>
+        <meta name="description" content="你是不是曾经被python版本困扰？你是不是曾经被安装python的各种包吓怕？教你一个优雅的方式------anaconda 1.什么是anaconda(百度百科)？ Anaconda指的是一个开源" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-99993.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/1aa4c3b403e19edb0b0d095bb648612f.webp" />
+        <meta property="og:release_date" content="2025-04-20T09:02:40" />
+    <meta property="og:updated_time" content="2025-04-20T09:02:40" />
+        <meta property="og:description" content="你是不是曾经被python版本困扰？你是不是曾经被安装python的各种包吓怕？教你一个优雅的方式------anaconda 1.什么是anaconda(百度百科)？ Anaconda指的是一个开源" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>Windows下如何优雅的管理多个python版本以及简易安装相关库（包括机器学习和PyQt）</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>你是不是曾经被python版本困扰？你是不是曾经被安装python的各种包吓怕？教你一个优雅的方式------anaconda</h2> <h2>1.什么是anaconda(百度百科)？</h2> <p>Anaconda指的是一个开源的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://baike.baidu.com/item/Python"  rel="nofollow">Python</a>发行版本，其包含了conda、Python等<strong>180多个</strong>科学包及其依赖项</p> <p>180多个，只有你想不到，没有它包含不到的哦！！！</p> <h2>2.怎么安装anaconda？</h2> <p>推荐这篇博客：</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/qq_26898461/article/details/51488326"  rel="nofollow">https://blog.csdn.net/qq_26898461/article/details/51488326</a></p> <p>同时需要配置环境变量</p> <p><img decoding="async" alt="" class="has" height="73" src="http://img.555519.xyz/uploads3/20220904/d5100dc0f0dabcfc5fd5df385bde7aae.jpg"></p> <h2>3.anaconda强大在何处？</h2> <p>可以这么说，安装完anaconda以后，几乎你将来需要用到的所有东西都在里面了。因为我最近在学习PyQt5，又涉及到安装各种依赖，各种软件的时候，顿感头皮发麻，所幸想起来了之前安装的anaconda，于是在安装目录下翻了翻，翻到了宝贝：</p> <p><img fetchpriority="high" decoding="async" alt="" class="has" height="405" src="http://img.555519.xyz/uploads3/20220904/70e5f92a4d37966ec3e5fae89ca29448.jpg"></p> <p>在该目录下找到了designer，双击打开，发现这就是qt设计师呀，同时也可以测试PyQt5也已经装好了。</p> <p>不仅仅是qt设计师，还有比如jupyter，ipython均可以在cmd里面启动，前提是系统变量要配置好</p> <h2>4.如何优雅管理多版本呢？</h2> <p>其实很简单，以python2.7和python3.6为例，我分别安装了python2.7版本的anaconda和python3.6版本的anaconda</p> <p><img decoding="async" alt="" class="has" height="114" src="http://img.555519.xyz/uploads3/20220904/e76ef2e76381651d21afbd648da1dc22.jpg"></p> <p>当使用python3.6的时候，系统变量是这样的：</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="157" src="http://img.555519.xyz/uploads3/20220904/2b333c85e8a6c7acb8f8f137fee13282.jpg"></p> <p>当使用python2.7的时候，只需要调整下系统变量的顺序，改成这样既可</p> <p><img loading="lazy" decoding="async" alt="" class="has" height="149" src="http://img.555519.xyz/uploads3/20220904/65e675d77ad00c355a30ef5613b84452.jpg"></p> <h2>5.为什么说这种方式优雅呢？</h2> <p>多版本管理当然有很多种方式，比如虚拟隔离的方法，但是根据我个人经验并不推荐，因为使用python最苦恼的就是安装包或者引用包时各种报错，而安装anaconda显然是一劳永逸式方法。Window下安装软件是非常简单的，一直点下一步就ok了，再配置一个环境变量，以后各种错误都无缘和你相见，所以说用anaconda是优雅的，调整系统变量来管理python版本也是优雅的！！</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-99211.htm">厦门领养宠物的平台的简单介绍</a></p>
+                                        <p>下一个：<a href="/news/article-99994.htm">关于IPC和PTH用户权限问题,psexec拒绝访问(Access Denied)的原因_在线工具</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-91106.htm" title="动物疫苗多少钱一支啊图片高清大全集（动物疫苗新规）">动物疫苗多少钱一支啊图片高清大全集（动物疫苗新规）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-26-node-share.htm" title="3月26日最新订阅分享 | 20.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费节点地址链接">3月26日最新订阅分享 | 20.1M/S|2025年SSR/V2ray/Shadowrocket/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-79613.htm" title="疫苗包括动物疫苗吗知乎（动物疫苗属于疫苗的分类吗）">疫苗包括动物疫苗吗知乎（动物疫苗属于疫苗的分类吗）</a></li>
+                        <li class="py-2"><a href="/news/article-99211.htm" title="厦门领养宠物的平台的简单介绍">厦门领养宠物的平台的简单介绍</a></li>
+                        <li class="py-2"><a href="/news/article-87388.htm" title="宠物领养证如何办理的 宠物领养证如何办理的呢">宠物领养证如何办理的 宠物领养证如何办理的呢</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-5-clash-node-github.htm" title="4月5日最新订阅分享 | 22.1M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接">4月5日最新订阅分享 | 22.1M/S|2025年Shadowrocket/Clash/V2ray/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-24-clash-v2ray-ss-ssr.htm" title="3月24日最新订阅分享 | 22.8M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接">3月24日最新订阅分享 | 22.8M/S|2025年Clash/V2ray/SSR/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-67606.htm" title="做宠物繁殖赚钱吗（一万元能搞什么养殖）">做宠物繁殖赚钱吗（一万元能搞什么养殖）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-free-clash-subscribe.htm" title="3月29日最新订阅分享 | 19.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费节点地址链接">3月29日最新订阅分享 | 19.9M/S|2025年Shadowrocket/SSR/V2ray/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-16-free-ssr-node.htm" title="3月16日最新订阅分享 | 18.6M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接">3月16日最新订阅分享 | 18.6M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">58</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

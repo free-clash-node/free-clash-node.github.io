@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-99210.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Docker基础ONBUILD指令介绍</title>
+        <meta name="description" content="目录  1、ONBUILD指令说明 2、演示ONBUILD指令的使用 3、补充：crul命令解释   1、ONBUILD指令说明 ONBUILD是一个特殊的指令，它后面跟的是其它指令，比如 RUN, " />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-99210.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="Docker基础ONBUILD指令介绍" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/342931bf2fb0715ea426ba68db32f5a9.webp" />
+        <meta property="og:release_date" content="2025-04-19T08:57:17" />
+    <meta property="og:updated_time" content="2025-04-19T08:57:17" />
+        <meta property="og:description" content="目录  1、ONBUILD指令说明 2、演示ONBUILD指令的使用 3、补充：crul命令解释   1、ONBUILD指令说明 ONBUILD是一个特殊的指令，它后面跟的是其它指令，比如 RUN, " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Docker基础ONBUILD指令介绍">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>Docker基础ONBUILD指令介绍</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div class="toc"> <div class="toc-container-header">目录</div> <ul> <li><a href="#1onbuild%E6%8C%87%E4%BB%A4%E8%AF%B4%E6%98%8E" rel="nofollow">1、ONBUILD指令说明</a></li> <li><a href="#2%E6%BC%94%E7%A4%BAonbuild%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BD%BF%E7%94%A8" rel="nofollow">2、演示ONBUILD指令的使用</a></li> <li><a href="#3%E8%A1%A5%E5%85%85crul%E5%91%BD%E4%BB%A4%E8%A7%A3%E9%87%8A" rel="nofollow">3、补充：crul命令解释</a></li> </ul> </div> <h2 id="1onbuild指令说明">1、ONBUILD指令说明</h2> <p>ONBUILD是一个特殊的指令，它后面跟的是其它指令，比如 RUN, COPY 等，而这些指令在当前镜像构建时并不会被执行。以当前镜像为基础镜像，去构建下一级镜像的时候，才会执行ONBUILD后面的指令。</p> <p>Dockerfile中的其它指令，都是为了定制当前镜像而准备的，唯有ONBUILD指令是为了帮助别人而定制自己，来准备的。</p> <blockquote> <p>即：ONBUILD指令在构建一个有继承的Dockerfile文件时，父镜像在被子镜像继承后，父镜像的ONBUILD指令被触发（触发指令，类似一个触发器）。</p> </blockquote> <h2 id="2演示onbuild指令的使用">2、演示ONBUILD指令的使用</h2> <p><strong>（1）演示准备</strong></p> <p>我们创建一个Dockerfile文件：<code>Dockerfile_onbuild</code>。</p> <pre><code class="language-shell">[root@192 mydockerfile]# pwd /home/mydockerfile [root@192 mydockerfile]# touch Dockerfile_onbuild</code></pre> <p>编辑<code>Dockerfile_onbuild</code>文件内容如下：</p> <pre><code class="language-dockerfile">FROM centos  # 初始镜像 RUN yum install -y curl  # 执行安装curl命令 ENTRYPOINT ["curl", "-s", "http://ip.cn"] # 容器启动后执行的命令  # 如果有谁继承了我，则触发下面命令 ONBUILD RUN echo "father---image---onbuild====886"</code></pre> <p>说明：假设有哪一个镜像继承了该镜像（父镜像），只要哪个子镜像<code>build</code>的时候，就会触发父镜像的<code>ONBUILD</code>指令。</p> <p>（是不是有点蒙，继续往下看）</p> <p>使用<code>Dockerfile_onbuild</code>文件生成<code>onbuild/father</code>镜像，如下：</p> <pre><code class="language-shell">[root@192 mydockerfile]# docker build -f /home/mydockerfile/Dockerfile_onbuild -t onbuild/father:1.0 . Sending build context to Docker daemon   5.12kB Step 1/4 : FROM centos  ---&gt; 300e315adb2f Step 2/4 : RUN yum install -y curl  ---&gt; Running in 11cd05afe92c CentOS Linux 8 - AppStream                      2.5 MB/s | 6.3 MB     00:02     CentOS Linux 8 - BaseOS                         1.0 MB/s | 2.3 MB     00:02     CentOS Linux 8 - Extras                         2.3 kB/s | 9.2 kB     00:03     Package curl-7.61.1-14.el8.x86_64 is already installed. Dependencies resolved. ================================================================================  Package               Architecture Version                  Repository    Size ================================================================================ Upgrading:  curl                  x86_64       7.61.1-14.el8_3.1        baseos       353 k  libcurl-minimal       x86_64       7.61.1-14.el8_3.1        baseos       285 k  Transaction Summary ================================================================================ Upgrade  2 Packages  Total download size: 638 k Downloading Packages: (1/2): curl-7.61.1-14.el8_3.1.x86_64.rpm        546 kB/s | 353 kB     00:00     (2/2): libcurl-minimal-7.61.1-14.el8_3.1.x86_64 406 kB/s | 285 kB     00:00     -------------------------------------------------------------------------------- Total                                           547 kB/s | 638 kB     00:01      CentOS Linux 8 - BaseOS                         1.6 MB/s | 1.6 kB     00:00     warning: /var/cache/dnf/baseos-f6a80ba95cf937f2/packages/curl-7.61.1-14.el8_3.1.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID 8483c65d: NOKEY Importing GPG key 0x8483C65D:  Userid     : "CentOS (CentOS Official Signing Key) &lt;security@centos.org&gt;"  Fingerprint: 99DB 70FA E1D7 CE22 7FB6 4882 05B5 55B3 8483 C65D  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-centosofficial Key imported successfully Running transaction check Transaction check succeeded. Running transaction test Transaction test succeeded. Running transaction   Preparing        :                                                        1/1    Upgrading        : libcurl-minimal-7.61.1-14.el8_3.1.x86_64               1/4    Upgrading        : curl-7.61.1-14.el8_3.1.x86_64                          2/4    Cleanup          : curl-7.61.1-14.el8.x86_64                              3/4    Cleanup          : libcurl-minimal-7.61.1-14.el8.x86_64                   4/4    Running scriptlet: libcurl-minimal-7.61.1-14.el8.x86_64                   4/4    Verifying        : curl-7.61.1-14.el8_3.1.x86_64                          1/4    Verifying        : curl-7.61.1-14.el8.x86_64                              2/4    Verifying        : libcurl-minimal-7.61.1-14.el8_3.1.x86_64               3/4    Verifying        : libcurl-minimal-7.61.1-14.el8.x86_64                   4/4   Upgraded:   curl-7.61.1-14.el8_3.1.x86_64     libcurl-minimal-7.61.1-14.el8_3.1.x86_64      Complete! Removing intermediate container 11cd05afe92c  ---&gt; c88555f994f9 Step 3/4 : ENTRYPOINT ["curl", "-s", "http://ip.cn"]  ---&gt; Running in 9d9061a8d47e Removing intermediate container 9d9061a8d47e  ---&gt; 96a5f70b56bf Step 4/4 : ONBUILD RUN echo "father---image---onbuild====886"  ---&gt; Running in 68ca17cc9a0b Removing intermediate container 68ca17cc9a0b  ---&gt; 05fdd64f3e60 Successfully built 05fdd64f3e60 Successfully tagged onbuild/father:1.0  # 查看本地Docker镜像 [root@192 mydockerfile]# docker images REPOSITORY          TAG       IMAGE ID       CREATED          SIZE onbuild/father      1.0       05fdd64f3e60   42 seconds ago   243MB centos              latest    300e315adb2f   3 months ago     209MB</code></pre> <p><strong>（2）开始演示</strong></p> <p>我们再创建一个Dockerfile文件：<code>Dockerfile_onbuild_son</code>。</p> <pre><code class="language-shell">[root@192 mydockerfile]# pwd /home/mydockerfile [root@192 mydockerfile]# touch Dockerfile_onbuild_son</code></pre> <p>编辑Dockerfile_onbuild_son文件内容如下：</p> <pre><code class="language-dockerfile"># 这里要继承上面生成的onbuild/father镜像 # 这样onbuild/father镜像就成了父镜像 # 通过该Dockerfile文件生成的镜像就是子镜像。 FROM onbuild/father:1.0  # 注意这里一定要加TAG版本，不然无法找到该镜像。  RUN yum install -y curl  # 执行安装curl命令  CMD /bin/bash</code></pre> <p>使用<code>Dockerfile_onbuild_son</code>文件生成<code>onbuild/son</code>镜像。</p> <p>如下：（请看下文中的注释）</p> <pre><code class="language-shell">[root@192 mydockerfile]# docker build -f /home/mydockerfile/Dockerfile_onbuild_son -t onbuild/son:1.0 . Sending build context to Docker daemon  6.144kB Step 1/3 : FROM onbuild/father:1.0 # Executing 1 build trigger       # 看这三行，就是ONBUILD指令的效果  ---&gt; Running in 0a165ca6352c     # Executing 1 build trigger 执行1个构建触发器 father---image---onbuild====886   # 数据是父镜像ONBUILD指令执行的内容    Removing intermediate container 0a165ca6352c  ---&gt; f9313959d1ae Step 2/3 : RUN yum install -y curl  ---&gt; Running in 0485b0d9d031 Last metadata expiration check: 0:09:32 ago on Sat Mar 20 14:46:45 2021. Package curl-7.61.1-14.el8_3.1.x86_64 is already installed. Dependencies resolved. Nothing to do. Complete! Removing intermediate container 0485b0d9d031  ---&gt; 0718c9a2d99a Step 3/3 : CMD /bin/bash  ---&gt; Running in e102da5c1b5e Removing intermediate container e102da5c1b5e  ---&gt; 46ed53584363 Successfully built 46ed53584363 Successfully tagged onbuild/son:1.0</code></pre> <p>以上就是ONBUILD指令的使用方式和效果。</p> <h2 id="3补充crul命令解释">3、补充：crul命令解释</h2> <ul> <li><code>curl</code>命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。</li> <li>如果系统没有<code>curl</code>命令可以使用<code>yum install curl</code>命令安装，也可以下载安装。</li> <li><code>curl</code>是将下载文件输出到<code>stdout</code>（标准输出，也就是控制台中）。<br /> 例如：<br /> 使用命令：<code>curl http://www.baidu.com</code><br /> 执行后，<code>www.baidu.com</code>的HTML页面内容，就会显示在屏幕上了。<br /> 这是最简单的使用方法，用这个命令获得了URL所指向的页面。</li> <li>同样，如果这里的URL指向的是一个文件或者一幅图，都可以直接下载到本地。如果下载的是HTML文档，那么将缺省响应头部的信息，即HTML文档的<code>header</code>。要想全部显示，请加参数<code>- i</code>。</li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-98448.htm">广州宠物领养中心在哪里啊最近（广州宠物领养中心官网）</a></p>
+                                        <p>下一个：<a href="/news/article-99211.htm">厦门领养宠物的平台的简单介绍</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-19-node-share-links.htm" title="3月19日最新订阅分享 | 22.3M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接">3月19日最新订阅分享 | 22.3M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe.htm" title="3月25日最新订阅分享 | 20.7M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接">3月25日最新订阅分享 | 20.7M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-95525.htm" title="南京宠物狗领养地址在哪里呀（南京宠物狗领养地址在哪里呀最近）">南京宠物狗领养地址在哪里呀（南京宠物狗领养地址在哪里呀最近）</a></li>
+                        <li class="py-2"><a href="/news/article-84517.htm" title="佳雯宠物医院(环城东路分院)怎么样（佳雯宠物医院管理有限公司）">佳雯宠物医院(环城东路分院)怎么样（佳雯宠物医院管理有限公司）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-node-subscribe-links.htm" title="3月4日最新订阅分享 | 22.2M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接">3月4日最新订阅分享 | 22.2M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-91105.htm" title="C语言简明清晰讲解结构体_C 语言">C语言简明清晰讲解结构体_C 语言</a></li>
+                        <li class="py-2"><a href="/news/article-74170.htm" title="动物疫苗行业标准最新规定（动物疫苗法规）">动物疫苗行业标准最新规定（动物疫苗法规）</a></li>
+                        <li class="py-2"><a href="/news/article-75520.htm" title="动物疫苗研发生产流程视频（动物疫苗生产工艺流程）">动物疫苗研发生产流程视频（动物疫苗生产工艺流程）</a></li>
+                        <li class="py-2"><a href="/news/article-69557.htm" title="宠物领养平台app小程序有哪些好用点的简单介绍">宠物领养平台app小程序有哪些好用点的简单介绍</a></li>
+                        <li class="py-2"><a href="/news/article-81675.htm" title="哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）">哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">58</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

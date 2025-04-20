@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-97728.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？</title>
+        <meta name="description" content="常用数据结构基本上是面试必问的问题，比如HashMap、LinkList、ConcurrentHashMap等。 关于HashMap，有个学员私信了我一个面试题说： “HashMap是怎么解决哈希冲突" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-97728.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/3c15c46ea7572176477a1a0043d2c9dc.webp" />
+        <meta property="og:release_date" content="2025-04-17T09:00:22" />
+    <meta property="og:updated_time" content="2025-04-17T09:00:22" />
+        <meta property="og:description" content="常用数据结构基本上是面试必问的问题，比如HashMap、LinkList、ConcurrentHashMap等。 关于HashMap，有个学员私信了我一个面试题说： “HashMap是怎么解决哈希冲突" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<blockquote> <p>常用数据结构基本上是面试必问的问题，比如HashMap、LinkList、ConcurrentHashMap等。</p> <p>关于HashMap，有个学员私信了我一个面试题说： “HashMap是怎么解决哈希冲突的？”</p> <p>关于这个问题，我们来模拟一下普通人和高手对于这个问题的回答。</p> </blockquote> </h1> <p>嗯.... HashMap我好久之前看过它的源码，我记得好像是通过链表来解决的！</p> </h1> <p>嗯，这个问题我从四个方面来回答。</p> <p>1.要了解Hash冲突，那首先我们要先了解Hash算法和Hash表。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/e5559b35dfc6fa79ddd937c6e0e8f74e.jpg" alt="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4ba69a2ac4e577edcb16357209fb47e3.jpg" alt="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？"></p> <p>（1）Hash算法，就是把任意长度的输入，通过散列算法，变成固定长度的输出，这个输出结果是散列值。</p> <p>（2）Hash表又叫做“散列表”，它是通过key直接访问在内存存储位置的数据结构，在具体实现上，我们通过hash函数把key映射到表中的某个位置，来获取这个位置的数据，从而加快查找速度。</p> <p>2.所谓hash冲突，是由于哈希算法被计算的数据是无限的，而计算后的结果范围有限，所以总会存在不同的数据经过计算后得到的值相同，这就是哈希冲突。</p> <p>3.通常解决hash冲突的方法有4种。</p> <p>（1）开放定址法，也称为线性探测法，就是从发生冲突的那个位置开始，按照一定的次序从hash表中找到一个空闲的位置，然后把发生冲突的元素存入到这个空闲位置中。ThreadLocal就用到了线性探测法来解决hash冲突的。</p> <p>向这样一种情况</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/3f1de6251dd75a61676c3d3e779c34bd.jpg" alt="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4ba69a2ac4e577edcb16357209fb47e3.jpg" alt="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？"></p> <p>在hash表索引1的位置存了一个key=name，当再次添加key=hobby时，hash计算得到的索引也是1，这个就是hash冲突。而开放定址法，就是按顺序向前找到一个空闲的位置来存储冲突的key。</p> <p>（2）链式寻址法，这是一种非常常见的方法，简单理解就是把存在hash冲突的key，以单向链表的方式来存储，比如HashMap就是采用链式寻址法来实现的。</p> <p>向这样一种情况</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/a132a3d4fdaf767ee958b83638910fc7.jpg" alt="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？"></p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/4ba69a2ac4e577edcb16357209fb47e3.jpg" alt="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？"></p> <p>存在冲突的key直接以单向链表的方式进行存储。</p> <p>（3）再hash法，就是当通过某个hash函数计算的key存在冲突时，再用另外一个hash函数对这个key做hash，一直运算直到不再产生冲突。这种方式会增加计算时间，性能影响较大。</p> <p>（4）建立公共溢出区， 就是把hash表分为基本表和溢出表两个部分，凡事存在冲突的元素，一律放入到溢出表中。</p> <p>4.HashMap在JDK1.8版本中，通过链式寻址法+红黑树的方式来解决hash冲突问题，其中红黑树是为了优化Hash表链表过长导致时间复杂度增加的问题。当链表长度大于8并且hash表的容量大于64的时候，再向链表中添加元素就会触发转化。</p> <p>以上就是我对这个问题的理解！</p> </h1> <p>这道面试题主要考察Java基础，面向的范围是工作1到5年甚至5年以上。</p> <p>因为集合类的对象在项目中使用频率较高，如果对集合理解不够深刻，容易在项目中制造隐藏的BUG。</p> <p>所以，再强调一下，面试的时候，基础是很重要的考核项！！</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-96975.htm">国内宠物粮食十大厂家有哪些品牌的（国内宠物粮生产厂家）</a></p>
+                                        <p>下一个：<a href="/news/article-97729.htm">宠物粮行业分析怎么写范文图片高清（宠物粮行业分析怎么写范文图片高清版）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-3-clash-windows.htm" title="3月3日最新订阅分享 | 19.1M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接">3月3日最新订阅分享 | 19.1M/S|2025年V2ray/SSR/Clash/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-88119.htm" title="mysql UNION ALL查询分页">mysql UNION ALL查询分页</a></li>
+                        <li class="py-2"><a href="/news/article-68262.htm" title="广州宠物救助站官网电话（广州宠物救助站官网电话号码）">广州宠物救助站官网电话（广州宠物救助站官网电话号码）</a></li>
+                        <li class="py-2"><a href="/news/article-83108.htm" title="Azure DevOps通过SSH部署上传到服务器的应用">Azure DevOps通过SSH部署上传到服务器的应用</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-10-free-high-speed-nodes.htm" title="3月10日最新订阅分享 | 19.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接">3月10日最新订阅分享 | 19.1M/S|2025年SSR/Clash/Shadowrocket/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-81674.htm" title="Java Random随机数">Java Random随机数</a></li>
+                        <li class="py-2"><a href="/news/article-65725.htm" title="农大宠物医院地址电话（农大宠物医院地址电话是多少）">农大宠物医院地址电话（农大宠物医院地址电话是多少）</a></li>
+                        <li class="py-2"><a href="/news/article-73502.htm" title="开动物医院需要多少资金才能开（开办一间动物医院需要什么资质）">开动物医院需要多少资金才能开（开办一间动物医院需要什么资质）</a></li>
+                        <li class="py-2"><a href="/news/article-86677.htm" title="动物防疫疫苗管理工作总结报告（动物疫苗管理员工作年度总结）">动物防疫疫苗管理工作总结报告（动物疫苗管理员工作年度总结）</a></li>
+                        <li class="py-2"><a href="/news/article-97728.htm" title="【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？">【面试普通人VS高手系列】HashMap是怎么解决哈希冲突的？</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">58</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
