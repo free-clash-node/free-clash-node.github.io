@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-100713.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>快速掌握AsyncI-新手入门</title>
+        <meta name="description" content="asyncio是从Python 3.4+开始引入的标准库，从而支持async IO，协程(coroutine)。  举个例子：假设有1个洗衣房，里面有10台洗衣机，有一个洗衣工在负责这10台洗衣机。那" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-100713.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="快速掌握AsyncI-新手入门" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/36517208087d0c7d1be8ff346b7d5521.webp" />
+        <meta property="og:release_date" content="2025-04-21T06:50:36" />
+    <meta property="og:updated_time" content="2025-04-21T06:50:36" />
+        <meta property="og:description" content="asyncio是从Python 3.4+开始引入的标准库，从而支持async IO，协程(coroutine)。  举个例子：假设有1个洗衣房，里面有10台洗衣机，有一个洗衣工在负责这10台洗衣机。那" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="快速掌握AsyncI-新手入门">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>快速掌握AsyncI-新手入门</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <blockquote> <p>asyncio是从Python 3.4+开始引入的标准库，从而支持async IO，协程(coroutine)。</p> </blockquote> <p>举个例子：假设有1个洗衣房，里面有10台洗衣机，有一个洗衣工在负责这10台洗衣机。那么洗衣房就相当于1个进程，洗衣工就相当1个线程。如果有10个洗衣工，就相当于10个线程，1个进程是可以开多线程的。这就是多线程！</p> <p>那么协程呢？先不急。大家都知道，洗衣机洗衣服是需要等待时间的，如果10个洗衣工，1人负责1台洗衣机，这样效率肯定会提高，但是不觉得浪费资源吗？明明1 个人能做的事，却要10个人来做。只是把衣服放进去，打开开关，就没事做了，等衣服洗好再拿出来就可以了。就算很多人来洗衣服，1个人也足以应付了，开好第一台洗衣机，在等待的时候去开第二台洗衣机，再开第三台，……直到有衣服洗好了，就回来把衣服取出来，接着再取另一台的（哪台洗好先就取哪台，所以协程是无序的）。这就是计算机的协程！洗衣机就是执行的方法。</p> <p><strong>当你程序中方法需要等待时间的话，就可以用协程，效率高，消耗资源少。</strong></p> <p>好了！现在来总结一下：</p> <p>洗衣房 ==&gt; 进程</p> <p>洗衣工 ==&gt; 线程</p> <p>洗衣机 ==&gt; 方法（函数）</p> <h2><a id="1_async_await_20" rel="nofollow"></a>1. async await</h2> <p>函数前+async keyword时，实际上是创建了这个函数的wrapper，当调用这个函数时，实际上会返回一个coroutine object</p> <p>首先 正常使用async awit</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python"><span class="token operator">&lt;</span>coroutine<span class="token builtin">object</span> main at<span class="token number">0x7feada389ec0</span><span class="token operator">&gt;</span> RuntimeWarning<span class="token punctuation">:</span> coroutine<span class="token string">'main'</span> was never awaited<span class="token keyword">print</span><span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> RuntimeWarning<span class="token punctuation">:</span> Enable tracemalloc to get the<span class="token builtin">object</span> allocation traceback</code></pre> <p>coroutine object与正常function不同，如果要等待coroutine object的执行结果，需要使用keyword<code>await</code>来等待coroutine完成返回的结果。我们来试试<code>await</code>:</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token keyword">await</span> main<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">File<span class="token string">"/Users/xxx/PycharmProjects/pythonProject/test_ansy.py"</span><span class="token punctuation">,</span> line<span class="token number">15</span><span class="token keyword">await</span> main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">^</span> SyntaxError<span class="token punctuation">:</span><span class="token string">'await'</span> outside function</code></pre> <p>await 只能在async函数中使用。但是await要在async函数中使用，而要跑async函数，需要await等待返回结果。需要使用event-loop</p> <h2><a id="2_Eventloop_63" rel="nofollow"></a>2. Event-loop</h2> <blockquote> <p>Event-Loop是一个在程序中等待并分发事件或者消息的设计模式</p> </blockquote> <p><strong>Python coroutine需要跑在event-loop中</strong></p> <p>asyncio这个包中提供了一个asyncio.run的函数，可以作为coroutine的入口，<code>asyncio.run</code>会创建一个event-loop，然后将传递给他的coroutine object执行在这个event-loop上，通常<code>asyncio.run</code>这个函数在程序中只会被调用一次，作为coroutine的入口</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span>  asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">Hello World</code></pre> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token keyword">await</span> foo<span class="token punctuation">(</span><span class="token string">"I am foo"</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"foo done"</span><span class="token punctuation">)</span><span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">foo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token comment"># 当前coroutine放弃运行，等待5秒后返回</span><span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"wake up"</span><span class="token punctuation">)</span>  asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">Hello World I am foo wake up foo done</code></pre> <p><code>asyncio.new_event_loop()</code>来创建一个新的Event-Loop然后通过<code>loop.run_until_complete()</code>来启动一个coroutine</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span><span class="token keyword">await</span> foo<span class="token punctuation">(</span><span class="token string">"I am foo"</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"foo done"</span><span class="token punctuation">)</span><span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">foo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"wake up foo"</span><span class="token punctuation">)</span>  loop<span class="token operator">=</span> asyncio<span class="token punctuation">.</span>new_event_loop<span class="token punctuation">(</span><span class="token punctuation">)</span> loop<span class="token punctuation">.</span>run_until_complete<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">Hello World I am foo wake up foo foo done</code></pre> <h2><a id="3_task_136" rel="nofollow"></a>3. task</h2> <p>当foo函数sleep的时候，我们不希望等待他结束，我们希望在此期间做一些别的事情，可以使用<code>asyncio.create_task</code>.asyncio.create_task 会获取当前正在运行的event-loop，然后再这个loop上schedule一个task。这个task会<strong>尽可能快的</strong>开始运行。Task是一个Future-like的object(Future后面会提到)，这个object上运行着一个coroutine，Task存在的意义在于让用户在Event-Loop上运行coroutine。那么为什么说是<strong>尽可能快的呢</strong>？先看接下来这个例子</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span>     task<span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token string">"I am foo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"foo done"</span><span class="token punctuation">)</span><span class="token keyword">await</span> task<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">foo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"wake up"</span><span class="token punctuation">)</span>  asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">Hello World foo done I am foo wake up</code></pre> <p>Surprise! “foo done"在"I am foo"之前被print了出来，这是因为create_task只是在Running Event-Loop上schedule了一个task，并没有立刻开始运行，因为main还没有暂停执行进入等待，也没执行结束，所以main会继续执行。当main执行到<code>await task</code>时，main暂停执行进入等待，下一个在Event-Loop上的task才开始执行，也就是foo。所以我们先看到了"foo done”，然后才是"I am foo"。接下来foo进入了sleep，暂停执行进入等待，而main()在等待foo的执行结果，Event-Loop上已经没有其他可以继续执行的task了，所以程序等待foo的<code>asyncio.sleep(1)</code>结束，最后print “wake up”。</p> <p>以上这种scheduling的方式叫做cooperative scheduling，一个Event-Loop在同一时间只运行一个Task。当一个Task awaits另一个Task(Future)完成时，当前Task会暂时停止执行，等待Future的结果，然后Event-Loop会让别的Task，Future callback(后面有提到)，或者IO开始执行。</p> <p>这里就要提到asyncio.Future的定义了。</p> <h2><a id="Future_173" rel="nofollow"></a>Future</h2> <p><code>asyncio.create_task</code>的返回是task，task的定义是:</p> <pre><code class="prism language-python">asyncio<span class="token punctuation">.</span>tasks<span class="token keyword">class</span><span class="token class-name">Task</span><span class="token punctuation">(</span>Future<span class="token punctuation">[</span>_T<span class="token punctuation">]</span><span class="token punctuation">,</span> Generic<span class="token punctuation">[</span>_T<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre> <p>future是</p> <pre><code class="prism language-python">asyncio<span class="token punctuation">.</span>futures<span class="token keyword">class</span><span class="token class-name">Future</span><span class="token punctuation">(</span>Awaitable<span class="token punctuation">[</span>_T<span class="token punctuation">]</span><span class="token punctuation">,</span> Iterable<span class="token punctuation">[</span>_T<span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre> <p><strong>Task它继承了Future</strong>，Future代表一个async operation在未来的最终结果。要等待这个task完成返回最终结果，我们可以使用前面提到的<code>await</code> keyword，这是因为Future是<code>Awaitable</code>的。</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello World"</span><span class="token punctuation">)</span>     task<span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token string">"I am foo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">await</span> task<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"foo done"</span><span class="token punctuation">)</span><span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">foo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"wake up"</span><span class="token punctuation">)</span>  asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">Hello World I am foo wake up foo done</code></pre> <p>这里可以看到，main()中的<code>await task</code>让main等待foo执行结束后，才继续print “foo done”。</p> <p>你可能还想问，我们如何获取到task的返回结果呢？：</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     task_foo<span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token string">"I am foo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     task_bar<span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>bar<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      foo_res<span class="token operator">=</span><span class="token keyword">await</span> task_foo<span class="token keyword">await</span> task_bar<span class="token keyword">print</span><span class="token punctuation">(</span>foo_res<span class="token punctuation">)</span><span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">foo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"wake up"</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token string">"returns "</span><span class="token operator">+</span> text<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">for</span> i<span class="token keyword">in</span><span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>   asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">I am foo<span class="token number">0</span><span class="token number">1</span><span class="token number">2</span><span class="token number">3</span> wake up<span class="token number">4</span><span class="token number">5</span><span class="token number">6</span><span class="token number">7</span><span class="token number">8</span><span class="token number">9</span> returns I am foo</code></pre> <p><code>res = await task</code> 可以让task的返回值被赋予到res上。</p> <p>Future同时也可以用来设置callback，当Future执行完成后，callback会被执行</p> <pre><code class="prism language-python"><span class="token keyword">import</span> asyncio<span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     task_foo<span class="token operator">=</span> asyncio<span class="token punctuation">.</span>create_task<span class="token punctuation">(</span>foo<span class="token punctuation">(</span><span class="token string">"I am foo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     task_foo<span class="token punctuation">.</span>add_done_callback<span class="token punctuation">(</span>callback<span class="token punctuation">)</span>     foo_res<span class="token operator">=</span><span class="token keyword">await</span> task_foo<span class="token keyword">print</span><span class="token punctuation">(</span>foo_res<span class="token punctuation">)</span><span class="token keyword">async</span><span class="token keyword">def</span><span class="token function">foo</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token keyword">await</span> asyncio<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"wake up"</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token string">"returns "</span><span class="token operator">+</span> text<span class="token keyword">def</span><span class="token function">callback</span><span class="token punctuation">(</span>future<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Future has result:"</span><span class="token punctuation">,</span> future<span class="token punctuation">.</span>result<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"I am callback"</span><span class="token punctuation">)</span>   asyncio<span class="token punctuation">.</span>run<span class="token punctuation">(</span>main<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre> <pre><code class="prism language-python">I am foo wake up Future has result<span class="token punctuation">:</span> returns I am foo I am callback returns I am foo</code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100712.htm">Celery教程&#8212;&#8212;&#8212;&#8212;-以守护进程方式运行worker</a></p>
+                                        <p>下一个：<a href="/news/article-101362.htm">Linux nfs 网络文件系统 配置过程</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-85950.htm" title="2020年动物防疫工作计划（2020年动物防疫工作计划表）">2020年动物防疫工作计划（2020年动物防疫工作计划表）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-clash-subscribe.htm" title="3月23日最新订阅分享 | 22.6M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接">3月23日最新订阅分享 | 22.6M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-76861.htm" title="无货源怎么做闲鱼具体怎么操作?（无货源闲鱼卖货流程）">无货源怎么做闲鱼具体怎么操作?（无货源闲鱼卖货流程）</a></li>
+                        <li class="py-2"><a href="/news/article-97729.htm" title="宠物粮行业分析怎么写范文图片高清（宠物粮行业分析怎么写范文图片高清版）">宠物粮行业分析怎么写范文图片高清（宠物粮行业分析怎么写范文图片高清版）</a></li>
+                        <li class="py-2"><a href="/news/article-86678.htm" title="动物疫苗市场规模分析 动物疫苗市场规模分析报告">动物疫苗市场规模分析 动物疫苗市场规模分析报告</a></li>
+                        <li class="py-2"><a href="/news/article-92511.htm" title="深圳市宠物领养之家官网查询 深圳市宠物领养之家官网查询电话">深圳市宠物领养之家官网查询 深圳市宠物领养之家官网查询电话</a></li>
+                        <li class="py-2"><a href="/news/article-67606.htm" title="做宠物繁殖赚钱吗（一万元能搞什么养殖）">做宠物繁殖赚钱吗（一万元能搞什么养殖）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-6-clash-node-github.htm" title="4月6日最新订阅分享 | 20.6M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接">4月6日最新订阅分享 | 20.6M/S|2025年V2ray/Shadowrocket/Clash/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-7-free-ssr-node.htm" title="4月7日最新订阅分享 | 22.5M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接">4月7日最新订阅分享 | 22.5M/S|2025年SSR/Clash/V2ray/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-4-free-node-subscribe-links.htm" title="3月4日最新订阅分享 | 22.2M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接">3月4日最新订阅分享 | 22.2M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

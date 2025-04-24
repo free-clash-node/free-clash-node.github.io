@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-101362.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Linux nfs 网络文件系统 配置过程</title>
+        <meta name="description" content="参考https://blog.csdn.net/solaraceboy/article/details/78743563 以下机器都是centOS 7 1 需要Linux安装nfs-utils。所有机" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-101362.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="Linux nfs 网络文件系统 配置过程" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/8b582c0f57b8e6909c14e6b172d69c76.webp" />
+        <meta property="og:release_date" content="2025-04-22T08:22:38" />
+    <meta property="og:updated_time" content="2025-04-22T08:22:38" />
+        <meta property="og:description" content="参考https://blog.csdn.net/solaraceboy/article/details/78743563 以下机器都是centOS 7 1 需要Linux安装nfs-utils。所有机" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Linux nfs 网络文件系统 配置过程">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>Linux nfs 网络文件系统 配置过程</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-dracula"> <p>参考https://blog.csdn.net/solaraceboy/article/details/78743563</p> <p>以下机器都是centOS 7</p> <p>1 需要Linux安装nfs-utils。所有机器都需要装。</p> <pre><code class="prism language-bash">yum -y<span class="token function">install</span> nfs-utils</code></pre> <p>2 启动服务端的nfs和rpcbind服务，并将其设置为开机启动（作为服务器，应保证服务在每次重启之后都能迅速提供服务）。</p> <pre><code class="prism language-bash">systemctl start nfs systemctl<span class="token builtin class-name">enable</span> nfs systemctl status nfs  systemctl start rpcbind systemctl<span class="token builtin class-name">enable</span> rpcbind systemctl status rpcbind</code></pre> <p>或者</p> <pre><code class="prism language-bash">systemctl<span class="token builtin class-name">enable</span> nfs --now systemctl<span class="token builtin class-name">enable</span> rpcbind --now</code></pre> <p>或者更简单一点：</p> <pre><code>systemctl enable nfs-server --now</code></pre> <pre><code class="prism language-bash"><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl start nfs</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl enable nfs</span> Created symlink from /etc/systemd/system/multi-user.target.wants/nfs-server.service to /usr/lib/systemd/system/nfs-server.service.<span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status nfs</span> ● nfs-server.service - NFS server and services    Loaded: loaded<span class="token punctuation">(</span>/usr/lib/systemd/system/nfs-server.service<span class="token punctuation">;</span> enabled<span class="token punctuation">;</span> vendor preset: disabled<span class="token punctuation">)</span>    Active: active<span class="token punctuation">(</span>exited<span class="token punctuation">)</span> since 四<span class="token number">2021</span>-12-02<span class="token number">21</span>:26:17 CST<span class="token punctuation">;</span> 24s ago  Main PID:<span class="token number">2792</span><span class="token punctuation">(</span>code<span class="token operator">=</span>exited,<span class="token assign-left variable">status</span><span class="token operator">=</span><span class="token number">0</span>/SUCCESS<span class="token punctuation">)</span>    CGroup: /system.slice/nfs-server.service<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Starting NFS server and services<span class="token punctuation">..</span>.<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Started NFS server and services.<span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl start rpcbind</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl enable rpcbind</span><span class="token punctuation">(</span>base<span class="token punctuation">)</span><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># systemctl status rpcbind</span> ● rpcbind.service - RPC<span class="token builtin class-name">bind</span><span class="token function">service</span>    Loaded: loaded<span class="token punctuation">(</span>/usr/lib/systemd/system/rpcbind.service<span class="token punctuation">;</span> enabled<span class="token punctuation">;</span> vendor preset: enabled<span class="token punctuation">)</span>    Active: active<span class="token punctuation">(</span>running<span class="token punctuation">)</span> since 四<span class="token number">2021</span>-12-02<span class="token number">21</span>:26:17 CST<span class="token punctuation">;</span> 46s ago  Main PID:<span class="token number">2788</span><span class="token punctuation">(</span>rpcbind<span class="token punctuation">)</span>    CGroup: /system.slice/rpcbind.service            └─2788 /sbin/rpcbind -w<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Starting RPC<span class="token builtin class-name">bind</span> service<span class="token punctuation">..</span>.<span class="token number">12</span>月 02<span class="token number">21</span>:26:17 localhost.localdomain systemd<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>: Started RPC<span class="token builtin class-name">bind</span> service.</code></pre> <p>3、在服务端创建共享目录。</p> <pre><code class="prism language-bash"><span class="token function">mkdir</span> /nfskevin</code></pre> <p>4、修改服务端配置文件<br /> 修改服务端配置文件<code>vim /etc/exports</code>，增加如下一行：</p> <p>(1) * 任意主机可以使用NFS服务</p> <p>(2) rw 该主机对该共享目录有读写权限</p> <p>(3) async 资料会先暂存于内存中，而非直接写入硬盘</p> <p>(4) no_root_squash 登入 NFS 主机使用分享目录的使用者，如果是 root 的话，那么对于这个分享的目录来说，他就具有 root 的权限，单词squash是压缩压扁的意思。</p> <p>(5) Root_squash 在登入 NFS 主机使用分享之目录的使用者如果是 root 时，那么这个使用者的权限将被压缩成为匿名使用者，通常他的 UID 与 GID 都会变成 nobody 那个系统账号的身份。</p> <p>声明三个事情：分享什么文件、给哪个IP分享、权限是什么。ro是read only，rw是read write。</p> <pre><code class="prism language-bash">/nfskevin<span class="token number">10.10</span>.14.38/24<span class="token punctuation">(</span>ro<span class="token punctuation">)</span></code></pre> <p>要开读写权限注意文件的权限需要改，而不是像下图只有读：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221113/fdc294817c1082037f7afa9608d70f40.jpg" alt="Linux nfs 网络文件系统 配置过程"></p> <p>5、重启服务端nfs服务</p> <pre><code class="prism language-bash">systemctl restart nfs-server</code></pre> <p>或者</p> <pre><code class="prism language-bash">exportfs -r</code></pre> <p>6、配置服务端防火墙</p> <pre><code class="prism language-bash">firewall-cmd --add-service<span class="token operator">=</span>nfs --permanent firewall-cmd --reload</code></pre> <p>7、启动客户端nfs服务（客户端可以不启动rpcbind服务），挂载服务端nfs目录。</p> <pre><code class="prism language-bash">systemctl<span class="token builtin class-name">enable</span> nfs --now systemctl<span class="token builtin class-name">enable</span> rpcbind --now<span class="token function">mkdir</span> /mntkevin<span class="token function">mount</span> -t nfs<span class="token number">10.10</span>.14.36:/nfskevin /mntkevin</code></pre> <p>8、测试。<br /> 在客户端查看一下挂载情况。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221113/6b635b0c7d61ce38d553106ea566afab.jpg" alt="Linux nfs 网络文件系统 配置过程"></p> <p>9、客户端的挂载，让开机就可用，开机就挂载起来。</p> <pre><code class="prism language-bash"><span class="token function">vim</span> /etc/fstab</code></pre> <p>写：</p> <pre><code class="prism language-bash"><span class="token number">10.10</span>.14.36:/nfskevin /mntkevin                 nfs     defaults<span class="token number">0</span><span class="token number">0</span></code></pre> <p><img decoding="async" src="http://img.555519.xyz/uploads/20221113/ea5da84878702b2f92886b9e18c11db7.jpg" alt="Linux nfs 网络文件系统 配置过程"></p> <pre><code class="prism language-bash"><span class="token function">mount</span> -a<span class="token comment"># 将/etc/fstab的所有内容重新加载 mount -a 会忽略所有已经完成的操作，也就是开机时 fstab 已经挂载后，而且你没有修改 fstab 。你再运行 mount -a ，他会自动忽略全部 fstab 内容。</span></code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100713.htm">快速掌握AsyncI-新手入门</a></p>
+                                        <p>下一个：<a href="/news/article-101363.htm">广州猫狗市场在哪里进货（广州猫狗市场在哪里进货便宜）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-12-node-share.htm" title="3月12日最新订阅分享 | 21.5M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接">3月12日最新订阅分享 | 21.5M/S|2025年SSR/V2ray/Clash/Shadowrocket免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-22-free-node-subscribe.htm" title="4月22日最新订阅分享 | 18.4M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接">4月22日最新订阅分享 | 18.4M/S|2025年SSR/Shadowrocket/V2ray/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-81675.htm" title="哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）">哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-69557.htm" title="宠物领养平台app小程序有哪些好用点的简单介绍">宠物领养平台app小程序有哪些好用点的简单介绍</a></li>
+                        <li class="py-2"><a href="/news/article-72166.htm" title="动物疫苗研究所 动物疫苗研究所官网">动物疫苗研究所 动物疫苗研究所官网</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-13-clash-windows.htm" title="4月13日最新订阅分享 | 18.1M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接">4月13日最新订阅分享 | 18.1M/S|2025年Clash/SSR/Shadowrocket/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-node-share-links.htm" title="4月4日最新订阅分享 | 18.4M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接">4月4日最新订阅分享 | 18.4M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-74853.htm" title="青浦二中高考成绩排名（青浦二中2020本科录取率）">青浦二中高考成绩排名（青浦二中2020本科录取率）</a></li>
+                        <li class="py-2"><a href="/news/article-85950.htm" title="2020年动物防疫工作计划（2020年动物防疫工作计划表）">2020年动物防疫工作计划（2020年动物防疫工作计划表）</a></li>
+                        <li class="py-2"><a href="/news/article-66363.htm" title="动物疫苗价格排行榜最新图片及价格大全（动物疫苗价格排行榜最新图片及价格大全视频）">动物疫苗价格排行榜最新图片及价格大全（动物疫苗价格排行榜最新图片及价格大全视频）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
