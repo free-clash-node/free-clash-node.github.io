@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://free-clash-node.github.io/news/article-106179.htm" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Mybatis中，返回一个多条数据（List）时，resultType的值指定的不是List，而是List中的元素类型</title>
+        <meta name="description" content="1、MyBatis在xml中&lt;select&gt;标签不写接收参数parameterType 和 返回结果类型resultType会报异常。 2、当返回多条一个结果时，并不是在resultTyp" />
+        <link rel="icon" href="/assets/website/img/free_clash_node/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="FreeClashNode免费节点地址中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://free-clash-node.github.io/news/article-106179.htm" />
+    <meta property="og:site_name" content="FreeClashNode免费节点地址中文网" />
+    <meta property="og:title" content="Mybatis中，返回一个多条数据（List）时，resultType的值指定的不是List，而是List中的元素类型" />
+    <meta property="og:image" content="https://free-clash-node.github.io/uploads/20250109/b82f86e888542e4e4296e2ec0566e9dc.webp" />
+        <meta property="og:release_date" content="2025-04-28T09:42:48" />
+    <meta property="og:updated_time" content="2025-04-28T09:42:48" />
+        <meta property="og:description" content="1、MyBatis在xml中&lt;select&gt;标签不写接收参数parameterType 和 返回结果类型resultType会报异常。 2、当返回多条一个结果时，并不是在resultTyp" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mybatis中，返回一个多条数据（List）时，resultType的值指定的不是List，而是List中的元素类型">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/line-icons.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.carousel.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/owl.theme.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/nivo-lightbox.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/animate.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/color-switcher.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/menu_sideslide.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/main.css">
+    <link rel="stylesheet" href="/assets/website/css/free_clash_node/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NMYT2SXBN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5NMYT2SXBN');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+    <!-- Header Section Start -->
+    <header id="slider-area">
+              <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+            <div class="container">
+                <a class="navbar-brand xcblog-blog-logo" href="/">
+                                <span>Free Clash Node</span>
+                                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="lni-menu"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Main Carousel Section -->
+        <div id="carousel-area">
+            <div id="carousel-slider" class="carousel slide carousel-fade" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="/assets/website/img/free_clash_node/slider/bg-1.jpg" alt="">
+                        <div class="carousel-caption text-left">
+                            <h1>Mybatis中，返回一个多条数据（List）时，resultType的值指定的不是List，而是List中的元素类型</h1>
+                            <h4>
+                                <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>1、MyBatis在xml中&lt;select&gt;标签不写接收参数parameterType 和 返回结果类型resultType会报异常。</p> <p>2、当返回多条一个结果时，并不是在resultType中写成List类型。如下图的错误xml中配置：</p> <pre class="has"><code class="language-html">&lt;select id="getUniqueAgencyCity" resultType="java.util.List"&gt; 		SELECT 			AgencyCity  		FROM 			agency_product  		WHERE 			ID IN ( SELECT DISTINCT SelectIDs FROM agency_information WHERE State = 0 )  &lt;/select&gt;</code></pre> <p>对应Mapper接口如下：</p> <pre>public List&lt;String&gt; getUniqueAgencyCity();</pre> <p>3、正确的写法如下，<span style="color:#3399ea;"><strong>resultType是集合中的元素的类型，并不是集合本身。</strong></span></p> <pre class="has"><code class="language-html">&lt;select id="getUniqueAgencyCity" resultType="String"&gt; 		SELECT 			AgencyCity  		FROM 			agency_product  		WHERE 			ID IN ( SELECT DISTINCT SelectIDs FROM agency_information WHERE State = 0 )  &lt;/select&gt;</code></pre> <p>&nbsp;</p> <p>4、如果不注意写错了，出现的异常大概是：</p> <pre><strong>Cause: java.lang.UnsupportedOperationException     at org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)     at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:150)     at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)</strong></pre> </p></div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-105351.htm">宠物粮店怎么开 宠物粮店怎么开店</a></p>
+                                        <p>下一个：<a href="/news/article-106180.htm">动物打疫苗多少钱一针（动物注射疫苗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-free-high-speed-nodes.htm" title="3月17日最新订阅分享 | 19.8M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接">3月17日最新订阅分享 | 19.8M/S|2025年V2ray/SSR/Shadowrocket/Clash免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-98447.htm" title="动物医院实践心得500字作文大全怎么写（动物医院社会实践报告）">动物医院实践心得500字作文大全怎么写（动物医院社会实践报告）</a></li>
+                        <li class="py-2"><a href="/news/article-95528.htm" title="三国杀出场台词语音（三国杀角色台词语音）">三国杀出场台词语音（三国杀角色台词语音）</a></li>
+                        <li class="py-2"><a href="/news/article-104567.htm" title="宠物狗批发基地（宠物犬批发基地）">宠物狗批发基地（宠物犬批发基地）</a></li>
+                        <li class="py-2"><a href="/news/article-106179.htm" title="Mybatis中，返回一个多条数据（List）时，resultType的值指定的不是List，而是List中的元素类型">Mybatis中，返回一个多条数据（List）时，resultType的值指定的不是List，而是List中的元素类型</a></li>
+                        <li class="py-2"><a href="/news/article-86678.htm" title="动物疫苗市场规模分析 动物疫苗市场规模分析报告">动物疫苗市场规模分析 动物疫苗市场规模分析报告</a></li>
+                        <li class="py-2"><a href="/news/article-81675.htm" title="哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）">哈尔滨王允海宠物医院怎么样呀电话（哈尔滨王春华宠物医院）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-25-clash-v2ray-ss-ssr.htm" title="4月25日最新订阅分享 | 19.4M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接">4月25日最新订阅分享 | 19.4M/S|2025年Clash/Shadowrocket/SSR/V2ray免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-4-node-share-links.htm" title="4月4日最新订阅分享 | 18.4M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接">4月4日最新订阅分享 | 18.4M/S|2025年Clash/Shadowrocket/V2ray/SSR免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/news/article-76861.htm" title="无货源怎么做闲鱼具体怎么操作?（无货源闲鱼卖货流程）">无货源怎么做闲鱼具体怎么操作?（无货源闲鱼卖货流程）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">81</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section End -->
+        <!-- Footer Section Start -->
+    <footer>
+        <!-- Copyright Start  -->
+        <div id="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="site-info float-left">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">FreeClashNode免费节点地址中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                        <div class="float-right">
+                            <ul class="nav nav-inline">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#">About Prime</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">TOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Return Policy</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">FAQ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+    </footer>
+    <!-- Footer Section End -->
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+        <i class="lni-arrow-up"></i>
+    </a>
+    <div id="loader">
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+        </div>
+    </div>
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="/assets/website/js/frontend/free_clash_node/jquery-min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/classie.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.mixitup.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/nivo-lightbox.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/owl.carousel.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.stellar.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/scrolling-nav.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.easing.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/wow.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.vide.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.counterup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/waypoints.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/form-validator.min.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/contact-form-script.js"></script>
+    <script src="/assets/website/js/frontend/free_clash_node/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
