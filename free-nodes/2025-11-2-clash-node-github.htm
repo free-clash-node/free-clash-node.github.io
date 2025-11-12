@@ -154,14 +154,39 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 是否支持系统代理？</h5></div>
+    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
     <div class="panel-body">
-        Netch 不直接修改系统代理，而是通过虚拟网卡（TAP 驱动）实现透明代理。这种方式不会影响浏览器设置，适合游戏和应用程序需要 UDP 支持的场景。<hr />    </div>
+        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 的 VMess over WebSocket 适合什么场景？</h5></div>
+    <div class="panel-body">
+        VMess over WebSocket 可以伪装成正常的 Web 流量，适用于被封锁较严格的网络环境。它通过将代理流量嵌入 WebSocket 协议中，使流量更难被检测和拦截。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化海外网站访问？</h5></div>
+    <div class="panel-body">
+        策略组可根据延迟和地理位置自动选择最佳节点访问海外网站。结合路由规则，可实现国内流量直连，国外流量通过代理，提高访问速度，降低延迟和连接不稳定风险。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的“分流规则”如何管理？</h5></div>
+    <div class="panel-body">
+        Quantumult X 使用策略组管理分流规则。用户可将规则文件导入应用，通过“policy group”定义不同流量走向，实现国内直连、国外代理、广告拦截等功能的自动分配。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>VMess 使用 TLS+WebSocket 的好处是什么？</h5></div>
     <div class="panel-body">
         TLS+WebSocket 可伪装成正常 HTTPS 流量，增强抗封锁能力和隐蔽性。结合域名伪装和策略组使用，可在高封锁网络环境下保持安全、稳定和高速的网络访问体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Netch 是否支持系统代理？</h5></div>
+    <div class="panel-body">
+        Netch 不直接修改系统代理，而是通过虚拟网卡（TAP 驱动）实现透明代理。这种方式不会影响浏览器设置，适合游戏和应用程序需要 UDP 支持的场景。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
+    <div class="panel-body">
+        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 的分组策略可以自动切换节点吗？</h5></div>
@@ -174,34 +199,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         全局代理会将所有流量通过节点转发，而规则代理仅对指定 IP、端口或应用生效。用户可根据需求选择代理模式，实现流量优化和不同应用的最佳网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 在使用订阅时要注意什么？</h5></div>
-    <div class="panel-body">
-        在 Shadowrocket 中添加订阅时，应确保链接以 https 开头且格式正确。此外，若节点更新失败，可尝试关闭缓存或重新获取订阅链接，以保证配置文件同步最新节点数据。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 的 VMess over WebSocket 适合什么场景？</h5></div>
-    <div class="panel-body">
-        VMess over WebSocket 可以伪装成正常的 Web 流量，适用于被封锁较严格的网络环境。它通过将代理流量嵌入 WebSocket 协议中，使流量更难被检测和拦截。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>PassWall2 的“节点切换策略”如何配置？</h5></div>
     <div class="panel-body">
-        在 PassWall2 中可设置多节点策略，如“按延迟排序”、“自动选择最快节点”等。程序会定期测速，根据实时数据自动切换线路，保证连接的稳定性和速度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的规则模式有哪些？</h5></div>
-    <div class="panel-body">
-        Clash 提供三种主要模式：Global（全局代理）、Rule（规则代理）和Direct（直连）。全局模式会让所有流量通过代理；规则模式根据规则文件自动分流；直连模式则完全不经过代理。用户可根据需求灵活切换。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的“分流规则”如何管理？</h5></div>
-    <div class="panel-body">
-        Quantumult X 使用策略组管理分流规则。用户可将规则文件导入应用，通过“policy group”定义不同流量走向，实现国内直连、国外代理、广告拦截等功能的自动分配。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 如何通过策略组优化海外网站访问？</h5></div>
-    <div class="panel-body">
-        策略组可根据延迟和地理位置自动选择最佳节点访问海外网站。结合路由规则，可实现国内流量直连，国外流量通过代理，提高访问速度，降低延迟和连接不稳定风险。    </div>
+        在 PassWall2 中可设置多节点策略，如“按延迟排序”、“自动选择最快节点”等。程序会定期测速，根据实时数据自动切换线路，保证连接的稳定性和速度。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -230,16 +230,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-27-free-clash-subscribe.htm" title="10月27日最新订阅分享 | 21.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点地址链接">10月27日最新订阅分享 | 21.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-2-clash-node-github.htm" title="11月2日最新订阅分享 | 18.7M/S|2025年Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点免费节点地址链接">11月2日最新订阅分享 | 18.7M/S|2025年Shadowrocket节点/Singbox节点/Clash节点/SSR节点/V2ray节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-4-clash-v2ray-ss-ssr.htm" title="10月4日最新订阅分享 | 19.6M/S|2025年Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点免费节点地址链接">10月4日最新订阅分享 | 19.6M/S|2025年Clash节点/V2ray节点/SSR节点/Singbox节点/Shadowrocket节点免费节点地址链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-5-clash-node.htm" title="10月5日最新订阅分享 | 22.9M/S|2025年SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点免费节点地址链接">10月5日最新订阅分享 | 22.9M/S|2025年SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-24-clash-windows.htm" title="10月24日最新订阅分享 | 22M/S|2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接">10月24日最新订阅分享 | 22M/S|2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-10-free-high-speed-nodes.htm" title="10月10日最新订阅分享 | 19.7M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接">10月10日最新订阅分享 | 19.7M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-19-free-subscribe-node.htm" title="10月19日最新订阅分享 | 18.5M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接">10月19日最新订阅分享 | 18.5M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-clash-subscribe.htm" title="11月6日最新订阅分享 | 19.3M/S|2025年Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接">11月6日最新订阅分享 | 19.3M/S|2025年Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-free-clash.htm" title="11月1日最新订阅分享 | 19.8M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点免费节点地址链接">11月1日最新订阅分享 | 19.8M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-13-free-node-subscribe.htm" title="10月13日最新订阅分享 | 22.8M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点免费节点地址链接">10月13日最新订阅分享 | 22.8M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-31-free-clash.htm" title="10月31日最新订阅分享 | 21.9M/S|2025年V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址链接">10月31日最新订阅分享 | 21.9M/S|2025年V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-6-clash-windows.htm" title="10月6日最新订阅分享 | 22.5M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接">10月6日最新订阅分享 | 22.5M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-8-free-node-subscribe-links.htm" title="10月8日最新订阅分享 | 21.6M/S|2025年V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费节点地址链接">10月8日最新订阅分享 | 21.6M/S|2025年V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-14-free-clash.htm" title="10月14日最新订阅分享 | 21.2M/S|2025年SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点免费节点地址链接">10月14日最新订阅分享 | 21.2M/S|2025年SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-18-clash-windows.htm" title="10月18日最新订阅分享 | 18.3M/S|2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接">10月18日最新订阅分享 | 18.3M/S|2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-20-free-high-speed-nodes.htm" title="10月20日最新订阅分享 | 21.4M/S|2025年SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费节点地址链接">10月20日最新订阅分享 | 21.4M/S|2025年SSR节点/V2ray节点/Shadowrocket节点/Singbox节点/Clash节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-23-clash-node-github.htm" title="10月23日最新订阅分享 | 20.3M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费节点地址链接">10月23日最新订阅分享 | 20.3M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费节点地址链接</a></li>
                     </ul>
     </div>
 </div>
@@ -251,7 +251,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">25</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
