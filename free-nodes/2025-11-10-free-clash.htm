@@ -265,9 +265,9 @@ UDP 适合实时通讯与视频流，TCP 则对丢包敏感度更低。根据具
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Trojan 的连接失败常见原因有哪些？</h5></div>
+    <div class="panel-heading"><h5>Netch 如何在 Windows 上加速游戏？</h5></div>
     <div class="panel-body">
-        Trojan 连接失败可能由于伪装域名错误、TLS 证书过期、防火墙阻挡端口或服务器不可达。通过查看客户端日志可以定位具体原因，并对症下药解决问题。<hr />    </div>
+        Netch 使用 TUN/TAP 模式将特定进程流量通过代理转发，常用于游戏加速。用户只需将游戏进程添加到列表，选择合适的代理节点，即可降低延迟并绕过地理限制。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 协议混淆如何增强安全性？</h5></div>
@@ -275,29 +275,24 @@ UDP 适合实时通讯与视频流，TCP 则对丢包敏感度更低。根据具
         SSR 可通过选择混淆方式和协议组合隐藏真实流量特征，降低被 DPI 检测和封锁风险。合理配置可提高节点隐蔽性和长期可用性，保证科学上网体验稳定可靠。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 节点延迟检测如何优化视频访问？</h5></div>
-    <div class="panel-body">
-        WinXray 定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证视频流量通过低延迟节点，减少缓冲和卡顿，提高播放流畅度和网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 在移动网络的优势？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何在 Windows 上加速游戏？</h5></div>
-    <div class="panel-body">
-        Netch 使用 TUN/TAP 模式将特定进程流量通过代理转发，常用于游戏加速。用户只需将游戏进程添加到列表，选择合适的代理节点，即可降低延迟并绕过地理限制。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>如何在 Windows 上用 Wireshark 分析代理流量以排查问题？</h5></div>
     <div class="panel-body">
         使用 Wireshark 抓取对应网卡流量，结合过滤器（例如 host <server_ip> 或 tcp.port==<port>）分析握手与数据包内容。注意 TLS/QUIC 流量为加密内容，仅能通过元信息（时延、丢包）判断异常，不要尝试解密用户隐私。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 支持哪些传输层协议？</h5></div>
+    <div class="panel-heading"><h5>Trojan 的连接失败常见原因有哪些？</h5></div>
     <div class="panel-body">
-        V2Ray 支持多种传输层，包括 TCP、mKCP、WebSocket、gRPC、QUIC 等。每种传输方式都有不同的性能特点，例如 TCP 稳定、WS 兼容 CDN、QUIC 延迟低。<hr />    </div>
+        Trojan 连接失败可能由于伪装域名错误、TLS 证书过期、防火墙阻挡端口或服务器不可达。通过查看客户端日志可以定位具体原因，并对症下药解决问题。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 节点延迟检测如何优化视频访问？</h5></div>
+    <div class="panel-body">
+        WinXray 定期测速节点延迟和丢包率，并结合策略组自动选择最佳节点。保证视频流量通过低延迟节点，减少缓冲和卡顿，提高播放流畅度和网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 日志太多如何调整日志级别？</h5></div>
+    <div class="panel-body">
+        在 Matsuri 或其内核配置中修改日志级别参数（如从 debug 降为 info 或 warning），同时限制日志轮转与最大文件大小。生产环境建议关闭 debug 日志以减少磁盘 I/O 与性能影响。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Potatso Lite 能否兼容最新的 iOS 系统？</h5></div>
@@ -305,9 +300,14 @@ UDP 适合实时通讯与视频流，TCP 则对丢包敏感度更低。根据具
         Potatso Lite 更新频率较低，在新版本 iOS 上可能出现兼容性问题。若遇到无法连接或闪退情况，建议升级至其他活跃维护的客户端如 Shadowrocket 或 Quantumult X。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 日志太多如何调整日志级别？</h5></div>
+    <div class="panel-heading"><h5>V2Ray 支持哪些传输层协议？</h5></div>
     <div class="panel-body">
-        在 Matsuri 或其内核配置中修改日志级别参数（如从 debug 降为 info 或 warning），同时限制日志轮转与最大文件大小。生产环境建议关闭 debug 日志以减少磁盘 I/O 与性能影响。<hr />    </div>
+        V2Ray 支持多种传输层，包括 TCP、mKCP、WebSocket、gRPC、QUIC 等。每种传输方式都有不同的性能特点，例如 TCP 稳定、WS 兼容 CDN、QUIC 延迟低。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 在移动网络的优势？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少握手次数和加密开销，适合高延迟或不稳定的移动网络。结合策略组和多节点切换，可提升网页浏览、视频播放和游戏的连接稳定性和流畅度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何优化 Clash DNS 解析速度？</h5></div>
@@ -341,16 +341,16 @@ UDP 适合实时通讯与视频流，TCP 则对丢包敏感度更低。根据具
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-24-clash-windows.htm" title="10月24日最新订阅分享 | 22M/S|2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接">10月24日最新订阅分享 | 22M/S|2025年Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-4-free-ssr-subscribe.htm" title="11月4日最新订阅分享 | 22.2M/S|2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点地址链接">11月4日最新订阅分享 | 22.2M/S|2025年Clash节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-clash-subscribe.htm" title="11月5日最新订阅分享 | 19.8M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费节点地址链接">11月5日最新订阅分享 | 19.8M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-27-free-clash-subscribe.htm" title="10月27日最新订阅分享 | 21.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点地址链接">10月27日最新订阅分享 | 21.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-3-free-clash-subscribe.htm" title="11月3日最新订阅分享 | 19.8M/S|2025年Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址链接">11月3日最新订阅分享 | 19.8M/S|2025年Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-18-clash-windows.htm" title="10月18日最新订阅分享 | 18.3M/S|2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接">10月18日最新订阅分享 | 18.3M/S|2025年SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-23-clash-node-github.htm" title="10月23日最新订阅分享 | 20.3M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费节点地址链接">10月23日最新订阅分享 | 20.3M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费节点地址链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-10-free-high-speed-nodes.htm" title="10月10日最新订阅分享 | 19.7M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接">10月10日最新订阅分享 | 19.7M/S|2025年Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-3-free-node-subscribe-links.htm" title="10月3日最新订阅分享 | 22.2M/S|2025年SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点免费节点地址链接">10月3日最新订阅分享 | 22.2M/S|2025年SSR节点/V2ray节点/Singbox节点/Shadowrocket节点/Clash节点免费节点地址链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-free-clash.htm" title="11月1日最新订阅分享 | 19.8M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点免费节点地址链接">11月1日最新订阅分享 | 19.8M/S|2025年Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-6-clash-windows.htm" title="10月6日最新订阅分享 | 22.5M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接">10月6日最新订阅分享 | 22.5M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-22-free-clash-subscribe.htm" title="10月22日最新订阅分享 | 19.7M/S|2025年Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点免费节点地址链接">10月22日最新订阅分享 | 19.7M/S|2025年Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-14-free-clash.htm" title="10月14日最新订阅分享 | 21.2M/S|2025年SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点免费节点地址链接">10月14日最新订阅分享 | 21.2M/S|2025年SSR节点/V2ray节点/Clash节点/Singbox节点/Shadowrocket节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-15-clash-node.htm" title="10月15日最新订阅分享 | 21.6M/S|2025年V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点地址链接">10月15日最新订阅分享 | 21.6M/S|2025年V2ray节点/Singbox节点/SSR节点/Clash节点/Shadowrocket节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-27-free-clash-subscribe.htm" title="10月27日最新订阅分享 | 21.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点地址链接">10月27日最新订阅分享 | 21.5M/S|2025年Clash节点/Shadowrocket节点/SSR节点/Singbox节点/V2ray节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-13-free-node-subscribe.htm" title="10月13日最新订阅分享 | 22.8M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点免费节点地址链接">10月13日最新订阅分享 | 22.8M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-9-free-high-speed-nodes.htm" title="10月9日最新订阅分享 | 22.1M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接">10月9日最新订阅分享 | 22.1M/S|2025年Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-clash-subscribe.htm" title="11月5日最新订阅分享 | 19.8M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费节点地址链接">11月5日最新订阅分享 | 19.8M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费节点地址链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-25-free-ssr-node.htm" title="10月25日最新订阅分享 | 20M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点免费节点地址链接">10月25日最新订阅分享 | 20M/S|2025年Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点免费节点地址链接</a></li>
                     </ul>
     </div>
 </div>
@@ -362,7 +362,7 @@ UDP 适合实时通讯与视频流，TCP 则对丢包敏感度更低。根据具
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">11</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">25</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
