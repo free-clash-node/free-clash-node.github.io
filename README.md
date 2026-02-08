@@ -1,4 +1,4 @@
-# 2月1日最新订阅分享 | 19.4M/S|2025年Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/SSR节点免费节点地址链接  更新时间 2026-02-01 10:21:15
+# 2月8日最新订阅分享 | 21.3M/S|2025年Singbox节点/Shadowrocket节点/Clash节点/SSR节点/V2ray节点免费节点地址链接  更新时间 2026-02-08 10:00:58
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://free-clash-node.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://free-clash-node.github.io/uploads/2026/02/0-20260201.yaml
-- https://free-clash-node.github.io/uploads/2026/02/1-20260201.yaml
-- https://free-clash-node.github.io/uploads/2026/02/2-20260201.yaml
-- https://free-clash-node.github.io/uploads/2026/02/3-20260201.yaml
-- https://free-clash-node.github.io/uploads/2026/02/4-20260201.yaml
+- https://free-clash-node.github.io/uploads/2026/02/0-20260208.yaml
+- https://free-clash-node.github.io/uploads/2026/02/1-20260208.yaml
+- https://free-clash-node.github.io/uploads/2026/02/2-20260208.yaml
+- https://free-clash-node.github.io/uploads/2026/02/3-20260208.yaml
+- https://free-clash-node.github.io/uploads/2026/02/4-20260208.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://free-clash-node.github.io/uploads/2026/02/0-20260201.txt
-- https://free-clash-node.github.io/uploads/2026/02/1-20260201.txt
-- https://free-clash-node.github.io/uploads/2026/02/2-20260201.txt
-- https://free-clash-node.github.io/uploads/2026/02/3-20260201.txt
-- https://free-clash-node.github.io/uploads/2026/02/4-20260201.txt
+- https://free-clash-node.github.io/uploads/2026/02/0-20260208.txt
+- https://free-clash-node.github.io/uploads/2026/02/1-20260208.txt
+- https://free-clash-node.github.io/uploads/2026/02/2-20260208.txt
+- https://free-clash-node.github.io/uploads/2026/02/3-20260208.txt
+- https://free-clash-node.github.io/uploads/2026/02/4-20260208.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://free-clash-node.github.io/uploads/2026/02/20260201.json
+- https://free-clash-node.github.io/uploads/2026/02/20260208.json
 
 ## 更多Clash节点订阅 ：
 
