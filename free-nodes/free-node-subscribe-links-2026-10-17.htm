@@ -152,14 +152,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多出口策略如何提高网络稳定性？</h5></div>
+    <div class="panel-heading"><h5>Clash 如何实现域名白名单策略？</h5></div>
     <div class="panel-body">
-        WinXray 支持为不同流量类型指定不同出口，通过策略组和路由规则自动选择最佳节点。这样可以分散流量压力，提高连接稳定性，并确保高优先级应用获得最佳速度。<hr />    </div>
+        Clash 可以通过策略组结合规则文件，将指定域名或网站加入白名单，实现直连而不经过代理节点。这样可以保证国内访问速度，同时节省节点带宽资源，提高整体网络效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Surfboard 支持按应用分流流量吗？</h5></div>
+    <div class="panel-body">
+        支持。Surfboard 可通过策略组和规则文件将不同应用的流量分配到指定节点，保证游戏、视频和浏览器流量走最优节点，提高访问速度和网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess AEAD 加密为何适合高封锁环境？</h5></div>
+    <div class="panel-body">
+        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何在 Android 手机上使用 Clash for Android？</h5></div>
     <div class="panel-body">
         Clash for Android 是专为移动设备开发的客户端，安装后导入订阅链接即可使用。用户可设置代理模式（全局、规则、自定义）并查看实时流量信息。它的电量消耗较低，适合长期后台运行。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mihomo 的节点分组管理有哪些优势？</h5></div>
+    <div class="panel-body">
+        节点分组可按用途、地区或延迟分类，结合策略组实现自动分流。方便用户管理大量节点，快速选择最佳节点，提高访问速度和连接稳定性，同时优化维护效率。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>如何防止 Clash 被系统防火墙阻断？</h5></div>
@@ -172,14 +187,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mihomo 的节点分组管理有哪些优势？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的多出口策略如何提高网络稳定性？</h5></div>
     <div class="panel-body">
-        节点分组可按用途、地区或延迟分类，结合策略组实现自动分流。方便用户管理大量节点，快速选择最佳节点，提高访问速度和连接稳定性，同时优化维护效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess AEAD 加密为何适合高封锁环境？</h5></div>
-    <div class="panel-body">
-        AEAD 加密可防止数据篡改和流量特征泄露，降低被检测风险。在高封锁网络中，保证节点可用性和连接稳定性，同时提升数据传输安全性，确保长期安全访问。<hr />    </div>
+        WinXray 支持为不同流量类型指定不同出口，通过策略组和路由规则自动选择最佳节点。这样可以分散流量压力，提高连接稳定性，并确保高优先级应用获得最佳速度。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>为什么使用 CDN 后仍然能被封？如何规避？</h5></div>
@@ -189,17 +199,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Matsuri 如何提升节点连接效率？</h5></div>
     <div class="panel-body">
-        Matsuri 是一个支持多协议的代理工具，强调快速连接与自动切换功能。它可以根据延迟自动选择最优节点，减少手动切换的繁琐过程，保证网络体验的流畅性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何实现域名白名单策略？</h5></div>
-    <div class="panel-body">
-        Clash 可以通过策略组结合规则文件，将指定域名或网站加入白名单，实现直连而不经过代理节点。这样可以保证国内访问速度，同时节省节点带宽资源，提高整体网络效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 支持按应用分流流量吗？</h5></div>
-    <div class="panel-body">
-        支持。Surfboard 可通过策略组和规则文件将不同应用的流量分配到指定节点，保证游戏、视频和浏览器流量走最优节点，提高访问速度和网络稳定性。    </div>
+        Matsuri 是一个支持多协议的代理工具，强调快速连接与自动切换功能。它可以根据延迟自动选择最优节点，减少手动切换的繁琐过程，保证网络体验的流畅性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -247,16 +247,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/free-ssr-subscribe-2026-10-11.htm" title="10月11日最新订阅分享 | 19.6M/S|2025年V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点免费节点地址链接">10月11日最新订阅分享 | 19.6M/S|2025年V2ray节点/Singbox节点/Trojan节点/Shadowrocket节点/SSR节点/Clash节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-ssr-subscribe-2026-10-13.htm" title="10月13日最新订阅分享 | 20.9M/S|2025年Trojan节点/V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点免费节点地址链接">10月13日最新订阅分享 | 20.9M/S|2025年Trojan节点/V2ray节点/Clash节点/Singbox节点/SSR节点/Shadowrocket节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-14-clash-v2ray-ss-ssr.htm" title="10月14日最新订阅分享 | 21.2M/S|2025年V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点免费节点地址链接">10月14日最新订阅分享 | 21.2M/S|2025年V2ray节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-8-node-share.htm" title="9月8日最新订阅分享 | 21.9M/S|2025年Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点免费节点地址链接">9月8日最新订阅分享 | 21.9M/S|2025年Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Trojan节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-free-high-speed-nodes.htm" title="9月26日最新订阅分享 | 23M/S|2025年SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接">9月26日最新订阅分享 | 23M/S|2025年SSR节点/Singbox节点/Trojan节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址链接</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/clash-windows-2026-10-15.htm" title="10月15日最新订阅分享 | 18.8M/S|2025年Clash节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点免费节点地址链接">10月15日最新订阅分享 | 18.8M/S|2025年Clash节点/Trojan节点/V2ray节点/Shadowrocket节点/Singbox节点/SSR节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-10-2-node-share.htm" title="10月2日最新订阅分享 | 22.5M/S|2025年Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点地址链接">10月2日最新订阅分享 | 22.5M/S|2025年Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Clash节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-ssr-subscribe-2026-9-29.htm" title="9月29日最新订阅分享 | 18.5M/S|2025年Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点免费节点地址链接">9月29日最新订阅分享 | 18.5M/S|2025年Trojan节点/Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-10-free-ssr-node.htm" title="9月10日最新订阅分享 | 20.2M/S|2025年Clash节点/SSR节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点免费节点地址链接">9月10日最新订阅分享 | 20.2M/S|2025年Clash节点/SSR节点/Shadowrocket节点/Trojan节点/Singbox节点/V2ray节点免费节点地址链接</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-5.htm" title="9月5日最新订阅分享 | 22.4M/S|2025年Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费节点地址链接">9月5日最新订阅分享 | 22.4M/S|2025年Clash节点/SSR节点/Shadowrocket节点/V2ray节点/Trojan节点/Singbox节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-6-free-clash.htm" title="10月6日最新订阅分享 | 19.9M/S|2025年SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点免费节点地址链接">10月6日最新订阅分享 | 19.9M/S|2025年SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-10-16-clash-node.htm" title="10月16日最新订阅分享 | 20.5M/S|2025年Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点免费节点地址链接">10月16日最新订阅分享 | 20.5M/S|2025年Shadowrocket节点/V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-clash-subscribe-2026-10-19.htm" title="10月19日最新订阅分享 | 20.1M/S|2025年Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Singbox节点免费节点地址链接">10月19日最新订阅分享 | 20.1M/S|2025年Clash节点/V2ray节点/SSR节点/Shadowrocket节点/Trojan节点/Singbox节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-12-clash-node.htm" title="9月12日最新订阅分享 | 18.9M/S|2025年SSR节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点免费节点地址链接">9月12日最新订阅分享 | 18.9M/S|2025年SSR节点/Shadowrocket节点/Trojan节点/Clash节点/V2ray节点/Singbox节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-10-3.htm" title="10月3日最新订阅分享 | 19.4M/S|2025年SSR节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点免费节点地址链接">10月3日最新订阅分享 | 19.4M/S|2025年SSR节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-9-23.htm" title="9月23日最新订阅分享 | 20M/S|2025年Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费节点地址链接">9月23日最新订阅分享 | 20M/S|2025年Clash节点/SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-ssr-subscribe-2026-9-13.htm" title="9月13日最新订阅分享 | 19.1M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费节点地址链接">9月13日最新订阅分享 | 19.1M/S|2025年SSR节点/Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/V2ray节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-6-free-node-subscribe.htm" title="9月6日最新订阅分享 | 20.8M/S|2025年Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点/V2ray节点免费节点地址链接">9月6日最新订阅分享 | 20.8M/S|2025年Shadowrocket节点/Clash节点/Trojan节点/Singbox节点/SSR节点/V2ray节点免费节点地址链接</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-10-17.htm" title="10月17日最新订阅分享 | 19.6M/S|2025年Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接">10月17日最新订阅分享 | 19.6M/S|2025年Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址链接</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -268,7 +268,7 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">24</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
